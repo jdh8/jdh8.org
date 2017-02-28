@@ -2,14 +2,7 @@
 layout: page
 title: Tools
 ---
-<style scoped>
-pre {
-	white-space: pre-wrap;
-}
-#jax {
-	display: inline;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 <noscript>
 	<p class="notice">
 		This page is full of interaction, requiring
@@ -57,8 +50,8 @@ pre {
 	<input type="file" id="asm-file">
 	<pre><code id="minified-asm"></code></pre>
 </section>
-<script async src="https://cdn.mathjax.org/mathjax/2.5-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-<script async src="https://cdn.rawgit.com/jquery/esprima/2.7.0/esprima.js"></script>
+<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/esprima/2.7.3/esprima.min.js"></script>
 <script async src="https://estools.github.io/esmangle/javascripts/esmangle.js"></script>
 <script async src="https://estools.github.io/escodegen/escodegen.browser.js"></script>
 <script async src="tools.js"></script>

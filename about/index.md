@@ -2,21 +2,7 @@
 layout: page
 title: About
 ---
-<style scoped>
-#avatar {
-	float: right;
-	background: none repeat scroll 0% 0% white;
-	border: 1px solid #bbb;
-	margin: 5px 0px 0px 25px;
-	padding: 14px 14px 50px;
-	box-shadow: 4px 4px 15px rgba(0, 0, 0, .6);
-	transform: rotate(5deg);
-}
-
-#avatar:hover {
-	transform: rotate(-5deg);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 About me
 --------

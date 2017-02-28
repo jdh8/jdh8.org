@@ -4,7 +4,8 @@ title: Inverted minors considered harmful with strong notrump
 categories: Bridge
 tags: Convention
 ---
-<style scoped>.redsuit { color: #d33 }</style>
+<link rel="stylesheet" href="/style/bridge.css">
+
 I have been researching on [Wbridge5][wbr5], a prominent bridge program.  I was
 confused that it disables [inverted minors][invm] by default.  Recently I came
 up with conclusion.
@@ -21,8 +22,6 @@ Nowadays, many ones open strong notrump according to [*somewhat American*][am].
 However, some of them still employ inverted minors.  Inverted minors has pros
 indeed, easily found by searching ["inverted minors"][duck].  Hence, I list
 its cons as balance.
-
-*[K-S]: Kaplan–Sheinwold
 
 [am]:   https://en.wikipedia.org/wiki/Standard_American
 [club]: https://en.wikipedia.org/wiki/Strong_club_system
