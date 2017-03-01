@@ -57,7 +57,7 @@ If 1♣ ensures 3+ clubs
 : With minimum strength, the probability of only 3 clubs is 21.5%.
 
 If 1♣ can be 4-4-3-2
-: With minimum strength, the probability of exactly 3 clubs is 20.4%，4-4-3-2 5.19%.
+: With minimum strength, the probability of exactly 3 clubs is 20.4%, 4-4-3-2 5.19%.
 
 ### Weak 4-card support dumped as garbage ###
 Express 5-card support at 3 level preempts, but 1NT with 4-card support is much
