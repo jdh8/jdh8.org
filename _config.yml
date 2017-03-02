@@ -8,3 +8,9 @@ description:
 
 paginate: 10
 permalink: /:year/:month/:title/
+
+defaults:
+  - scope:
+        path: ""
+    values:
+        author: jdh8
