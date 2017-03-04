@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<Person xmlns="http://xmlns.com/foaf/0.1/">
+		<name xml:lang="zh">何震邦</name>
+		<name xml:lang="zh-Latn">Chen-Pang He</name>
+		<familyName xml:lang="zh">何</familyName>
+		<familyName xml:lang="zh-Latn">He</familyName>
+		<givenName xml:lang="zh">震邦</givenName>
+		<givenName xml:lang="zh-Latn">Chen-Pang</givenName>
+		<mbox_sha1sum>17ab6f6d888741a35dd58b895c9e1b200668460f</mbox_sha1sum>
+		<mbox_sha1sum>9288e00d54e69a37d8c0a598bc377774e9f68b3a</mbox_sha1sum>
+		<thumbnail rdf:resource="https://www.gravatar.com/avatar/a28b050d0206b3d418551203ddd83cba" />
+		<weblog rdf:resource="https://jdh8.org/" />
+		<weblog rdf:resource="/" />
+		<currentProject rdf:resource="http://eigen.tuxfamily.org/" />
+		<schoolHomepage rdf:resource="http://www.tmu.edu.tw/" />
+		<url rdf:resource="https://www.facebook.com/jdh863" />
+		<url rdf:resource="https://plus.google.com/+%E4%BD%95%E9%9C%87%E9%82%A6-jdh8?rel=author" />
+		<url rdf:resource="https://zh.wikipedia.org/wiki/User:Jdh8" />
+		<url rdf:resource="https://en.wikipedia.org/wiki/User:Jdh8" />
+		<url rdf:resource="https://fr.wikipedia.org/wiki/Utilisateur:Jdh8" />
+		<url rdf:resource="https://bitbucket.org/jdh8" />
+		<url rdf:resource="https://github.com/jdh8" />
+		<url rdf:resource="https://stackoverflow.com/users/2099989/jdh8" />
+		<interest rdf:resource="https://www.w3.org/html/" />
+		<interest rdf:resource="https://isocpp.org/" />
+		<interest rdf:resource="https://en.wikipedia.org/wiki/Calculus" />
+		<interest rdf:resource="https://en.wikipedia.org/wiki/Numerical_linear_algebra" />
+	</Person>
+</rdf:RDF>
