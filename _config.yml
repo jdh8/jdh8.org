@@ -7,7 +7,7 @@ description:
     in <a href="https://jekyllrb.com/" rel="external">Jekyll</a>
 
 paginate: 10
-permalink: /:year/:month/:title/
+permalink: /:title/
 
 defaults:
   - scope:
