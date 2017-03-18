@@ -5,11 +5,11 @@ input {
 button,
 button[disabled]:hover,
 button[disabled]:focus {
+	font-family: $sans;
 	background: #1a1a1a;
 	border: 0;
 	border-radius: 2px;
 	color: #fff;
-	font-family: $sans;
 	font-weight: 700;
 	letter-spacing: 0.046875em;
 	line-height: 1;
@@ -22,14 +22,24 @@ button:focus {
 	background: #007acc;
 }
 
-button:focus {
+button:focus,
+:checked:focus + .toggle {
 	outline: thin dotted;
 	outline-offset: -4px;
 }
 
-header > label {
+.toggle {
 	@extend button;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#ballot {
+	display: inline;
+	opacity: 0;
 }
 
 input[type="date"],

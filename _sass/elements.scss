@@ -57,20 +57,15 @@ td {
 }
 
 table {
-	border: {
-		collapse: separate;
-		spacing: 0;
-		width: 1px 0 0 1px;
-	}
-
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
 	margin: 0 0 1.75em;
 	table-layout: fixed;
 	width: 100%;
 }
 
-caption,
-th,
-td {
+caption {
 	font-weight: normal;
 	text-align: start;
 }
@@ -78,6 +73,7 @@ td {
 th {
 	border-width: 0 1px 1px 0;
 	font-weight: 700;
+	text-align: start;
 }
 
 td {
@@ -89,8 +85,16 @@ td {
 	padding: 0.4375em;
 }
 
-::placeholder {
+@mixin placeholder() {
 	font-family: $sans;
 	color: #686868;
 	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	@include placeholder();
+}
+
+::placeholder {
+	@include placeholder();
 }

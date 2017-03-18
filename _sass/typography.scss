@@ -1,16 +1,42 @@
-$sans: Montserrat, "Helvetica Neue", sans-serif;
-$serif: Merriweather, Georgia, serif;
+@font-face {
+	font-family: Symbola;
+	src: local(Symbola), url(../fonts/Symbola.woff);
+}
+
+@font-face {
+	font-family: Symbola;
+	font-style: italic;
+	src: local(Symbola), url(../fonts/Symbola.woff);
+}
+
+@font-face {
+	font-family: Symbola;
+	font-weight: bold;
+	src: local(Symbola), url(../fonts/Symbola.woff);
+}
+
+@font-face {
+	font-family: Symbola;
+	font-style: italic;
+	font-weight: bold;
+	src: local(Symbola), url(../fonts/Symbola.woff);
+}
+
+$sans: Montserrat, "Helvetica Neue", sans-serif, Symbola;
 
 html,
 input,
 select,
 textarea {
-	font-family: $serif;
+	font-family: Merriweather, Georgia, "Times New Roman", Times, serif, Symbola;
 	color: #1a1a1a;
 	line-height: 1.75;
 }
 
 html {
+	font-synthesis: weight;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
 	hyphens: auto;
 }
 

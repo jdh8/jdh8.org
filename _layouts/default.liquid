@@ -4,14 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	{% if page.id == "/" %}
+	{% assign structure = page.url | split: "/" | shift %}
+
+	{% if structure == empty %}
 		<title>{{ site.title }} &ndash; {{ site.description | strip_html }}</title>
+	{% elsif structure[0] == "page" %}
+		<title>{{ site.title }} &ndash; Page {{ structure[1] }} &ndash; {{ site.description | strip_html }}</title>
 	{% else %}
 		<title>{{ page.title }} &ndash; {{ site.title }}</title>
 	{% endif %}
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:,i,b,bi,900,900i%7CMontserrat:,i,b,bi,900,900i">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:,i,b,bi,900,900i%7CMontserrat:,i,b,bi,900,900i%7CInconsolata:,b">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/main.css">
 
 	<style>

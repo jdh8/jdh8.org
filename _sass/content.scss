@@ -2,27 +2,25 @@ body {
 	margin: 0 auto;
 	max-width: 1.1 * 75em;
 	word-wrap: break-word;
-	hyphens: auto;
-}
-
-main {
-	margin-bottom: 3.5em;
-	padding-left: 7.6923076923076923%;
-	padding-right: 7.6923076923076923%;
-}
-
-main > :last-child {
-	margin-bottom: 0;
-}
-
-article {
-	margin-bottom: 3.5em;
-	position: relative;
 }
 
 %title {
 	font-family: $sans;
 	font-weight: 700;
+}
+
+%heading {
+	color: #1a1a1a;
+	font-weight: 900;
+	margin-bottom: 1.75rem;
+}
+
+* + %heading {
+	margin-top: 3.5rem;
+}
+
+header %heading {
+	@extend %title;
 }
 
 h1,
@@ -31,21 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #1a1a1a;
-	font-weight: 900;
-	margin-bottom: 1.75rem;
-
-	* + & {
-		margin-top: 3.5rem;
-	}
-
-	header & {
-		@extend %title;
-	}
-}
-
-main > h1 {
-	@extend %title;
+	@extend %heading;
 }
 
 article > header > *,
@@ -85,18 +69,6 @@ h4 {
 
 h6 {
 	font-style: italic;
-}
-
-main > header {
-	display: block;
-	padding: 0;
-	margin-bottom: 3.5rem;
-	border-top: 4px solid #1a1a1a;
-	padding-top: 1.75rem;
-}
-
-main > h1 {
-	margin-bottom: 3.5rem;
 }
 
 header {
@@ -157,6 +129,34 @@ header > .menu {
 	outline: thin dotted;
 }
 
+main {
+	margin-bottom: 3.5em;
+	padding-left: 7.6923076923076923%;
+	padding-right: 7.6923076923076923%;
+}
+
+main > header {
+	display: block;
+	padding: 0;
+	margin-bottom: 3.5rem;
+	border-top: 4px solid #1a1a1a;
+	padding-top: 1.75rem;
+}
+
+main > h1 {
+	@extend %title;
+	margin-bottom: 3.5rem;
+}
+
+main > :last-child {
+	margin-bottom: 0;
+}
+
+article {
+	margin-bottom: 3.5em;
+	position: relative;
+}
+
 aside {
 	margin-bottom: 3.5em;
 	padding: 0 7.6923076923076923%;
@@ -182,11 +182,11 @@ article > footer {
 	align-items: center;
 }
 
-footer > div {
+article > footer > div {
 	margin-bottom: 0.4375rem;
 }
 
-footer > div:not(:empty):not(:last-child)::after {
+article > footer > * + div:not(:empty)::before {
 	content: "/";
 	opacity: 0.7;
 	padding: 0 0.4375rem;
@@ -218,6 +218,7 @@ footer > div:not(:empty):not(:last-child)::after {
 
 @viewport {
 	width: device-width;
+	zoom: 1;
 }
 
 @media screen and (min-width: 44.375em) {
