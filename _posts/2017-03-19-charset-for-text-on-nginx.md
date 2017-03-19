@@ -3,7 +3,7 @@ layout: post
 title: How to set charset all text responses on nginx
 ---
 It's usual that all text files on a site share the same character encoding.
-Especially [UTF-8][utf8] is modern *de factor* standard.  However, the default
+Especially [UTF-8][utf8] is modern *de facto* standard.  However, the default
 [`charset_types`][types] does not contain `text/css`, let alone other non-plain
 text types e.g. `text/markdown`.
 
