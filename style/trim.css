@@ -1,0 +1,4 @@
+body > header,
+body > footer {
+	display: none;
+}
