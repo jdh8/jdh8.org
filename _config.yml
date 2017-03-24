@@ -1,11 +1,8 @@
 gems:
   - jekyll-paginate
 
-title: Sweet 16
-description:
-    <a href="https://wordpress.org/themes/twentysixteen/" rel="external">Wordpress 2016 theme</a>
-    in <a href="https://jekyllrb.com/" rel="external">Jekyll</a>
-
+title: Integration by me
+description: Then you will know the truth, and the truth will set you free.
 paginate: 10
 paginate_path: /page/:num/
 permalink: /:title/
