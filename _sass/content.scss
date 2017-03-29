@@ -15,8 +15,12 @@ body {
 	margin-bottom: 1.75rem;
 }
 
-* + %heading {
+.content %heading {
 	margin-top: 3.5rem;
+}
+
+.content > %heading:first-child {
+	margin-top: 0;
 }
 
 header %heading {
@@ -195,6 +199,7 @@ article > footer > * + div:not(:empty)::before {
 .content > footer {
 	border-top: 1px solid #d1d1d1;
 	padding-top: 1.75rem;
+	padding-bottom: 0;
 }
 
 .content > footer .gravatar {
@@ -219,26 +224,4 @@ article > footer > * + div:not(:empty)::before {
 @viewport {
 	width: device-width;
 	zoom: 1;
-}
-
-@media screen and (min-width: 44.375em) {
-	@import "query/44.375";
-}
-
-@media screen and (min-width: 56.875em) {
-	@import "query/56.875";
-}
-
-@media screen and (min-width: 61.5625em) {
-	@import "query/61.5625";
-}
-
-@media screen and (min-width: 85.125em) {
-	body {
-		padding: 0 3.75em;
-	}
-}
-
-@media print {
-	@import "query/print";
 }
