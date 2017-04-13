@@ -1,4 +1,4 @@
-body > header,
+.brand > p,
 body > footer {
 	display: none;
 }
