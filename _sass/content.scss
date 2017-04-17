@@ -15,11 +15,12 @@ body {
 	margin-bottom: 1.75rem;
 }
 
-.content %heading {
+.content * + %heading,
+.content * + * %heading {
 	margin-top: 3.5rem;
 }
 
-.content > %heading:first-child {
+.content > footer h2 {
 	margin-top: 0;
 }
 
@@ -102,12 +103,16 @@ body > header {
 	display: none;
 }
 
-header > .menu {
+body > header > nav {
 	display: none;
 }
 
 :checked ~ .menu {
 	display: block;
+}
+
+:checked ~ .social {
+	display: flex;
 }
 
 .toggle {
@@ -167,7 +172,7 @@ aside {
 }
 
 footer {
-	padding: 0 7.6923076923076923%;
+	padding: 0 7.6923076923076923% 0.3125rem;
 	color: #686868;
 	font-size: 0.8125rem;
 	line-height: 1.3125rem;
