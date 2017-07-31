@@ -12,5 +12,5 @@ C][c].
 <input required id="num" type="number" max="4294967295" min="0" step="1">
 <p id="result">&nbsp;</p>
 
-<script src="prime.js"></script>
+<script src="prime.min.js"></script>
 <script src="dom.js"></script>
