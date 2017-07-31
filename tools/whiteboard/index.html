@@ -1,0 +1,17 @@
+---
+layout: page
+title: Whiteboard
+---
+<form id="board" name="board">
+	<textarea id="html" name="html" placeholder="Please enter some HTML 5 source.  It is placed in a &lt;div>."></textarea>
+	<p>
+		<label>
+			<input id="jax" name="jax" type="checkbox">
+			Enable <a href="http://www.mathjax.org/" rel="external">MathJax</a>
+		</label>
+	</p>
+	<p><button type="submit">Typeset</button></p>
+</form>
+<p id="display">&nbsp;</p>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script async src="dom.js"></script>

@@ -1,6 +1,13 @@
 - title: About
   href: /about/
 - title: Tools
-  href: /tools/
+  href: "#"
+  children:
+    - title: Asm.js minifier
+      href: /tools/asm-js-minifier/
+    - title: Primality test
+      href: /tools/prime/
+    - title: Whiteboard
+      href: /tools/whiteboard/
 - title: Wbridge5
   href: https://jdh8.gitbooks.io/wbridge5/content/
