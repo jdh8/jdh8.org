@@ -5,14 +5,10 @@
 
 	document.getElementById("num").addEventListener("input", function()
 	{
-		output.nodeValue = function(value)
-		{
-			value = +value;
+		const value = this.valueAsNumber;
 
-			if (+(~~value >>> 0) != value)
-				return "Plese enter a 32-bit positive integer.";
-
-			return value + [" is composite.", " is neither prime nor composite.", " is prime."][prime.test(value)];
-		}(this.valueAsNumber);
+		output.nodeValue = prime.isuint(value)
+			? value + [" is composite.", " is neither prime nor composite.", " is prime."][prime.test(value)]
+			: "Plese enter a 32-bit positive integer.";
 	});
 }

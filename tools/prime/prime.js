@@ -1,6 +1,6 @@
 // This file is part of Integration by me.
 //
-// Copyright (C) 2013-2015 Chen-Pang He <http://jdh8.org/>
+// Copyright (C) 2013-2017 Chen-Pang He <http://jdh8.org/>
 //
 // Integration by me is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -144,6 +144,8 @@ function Prime()
 			case 1:
 				return 1;
 			case 2:
+			case 7:
+			case 61:
 				return 2;
 		}
 
@@ -163,8 +165,25 @@ function Prime()
 		return 2;
 	}
 
+	/**
+	 * @summary Test if a number is a 32-bit unsigned integer
+	 *
+	 * @param {double} x  Number to test
+	 *
+	 * @returns {signed} Whether a 32-bit unsigned integer represents x
+	 */
+	function isuint(x)
+	{
+		x = +x;
+
+		return +(~~x >>> 0) == x |0;
+	}
+
 	return {
 		/** @default Prime~test */
 		test: test,
+
+		/** @default Prime~isuint */
+		isuint: isuint,
 	};
 }
