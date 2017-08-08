@@ -1,6 +1,6 @@
 // This file is part of Integration by me.
 //
-// Copyright (C) 2013-2015 Chen-Pang He <https://jdh8.org/>
+// Copyright (C) 2013-2017 Chen-Pang He <https://jdh8.org/>
 //
 // Integration by me is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,67 +16,59 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 "use strict";
-
-!function(){
-
-/**
- * The argument is modified in place to avoid deep copy.
- *
- * @summary Concatenate adjacent variable declarations
- *
- * @param {Object} ast - Abstract syntax tree
- *
- * @returns  Modified {@link ast}
- */
-function concatAdjacentVars(ast)
 {
-	var body = ast.body;
-	var cache = [];
-
-	for (var k = body.length - 1; k >= 0; --k)
+	function concat(array, right)
 	{
-		var stmt = body[k];
+		const left = array[array.length - 1];
 
-		switch (stmt.type)
-		{
-			case "VariableDeclaration":
-				if (cache.length)
-					body.splice(k + 1, 1);
-				cache = stmt.declarations = stmt.declarations.concat(cache);
-				break;
-			case "FunctionDeclaration":
-				concatAdjacentVars(stmt.body);
-				// no break
-			default:
-				cache = [];
-		}
+		if (left && left.type === "VariableDeclaration" && right.type === "VariableDeclaration")
+			left.declarations = left.declarations.concat(right.declarations);
+		else
+			array.push(right);
+
+		return array;
 	}
 
-	return ast;
-}
+	/**
+	 * The argument is modified in place to avoid deep copy.
+	 *
+	 * @summary Concatenate adjacent variable declarations
+	 *
+	 * @param {Object} ast - Abstract syntax tree
+	 *
+	 * @returns  Modified {@link ast}
+	 */
+	function transform(ast)
+	{
+		const result = ast.body;
 
-var reader = new FileReader();
-var code = document.getElementById("minified-asm");
+		result.body = result.body.reduce(concat, []);
+		result.body.filter(function(s){ return s.type === "FunctionDeclaration" }).forEach(transform);
 
-reader.addEventListener("loadend", function()
-{
-	var ast = esmangle.mangle(esprima.parse(this.result));
+		return result;
+	}
 
-	code.textContent = escodegen.generate(concatAdjacentVars(ast), {
-		format: {
-			renumber: false,
-			escapeless: true,
-			compact: true,
-			semicolons: false,
-			quotes: "double",
-		},
-		parse: esprima.parse,
+	const reader = new FileReader();
+	const code = document.getElementById("minified-asm");
+
+	reader.addEventListener("loadend", function()
+	{
+		code.textContent = escodegen.generate(transform({ body: esmangle.mangle(esprima.parse(this.result)) }),
+		{
+			format:
+			{
+				renumber: false,
+				escapeless: true,
+				compact: true,
+				semicolons: false,
+				quotes: "double",
+			},
+			parse: esprima.parse,
+		});
 	});
-});
 
-document.getElementById("asm-file").addEventListener("change", function()
-{
-	reader.readAsText(this.files[0]);
-});
-
-}();
+	document.getElementById("asm-file").addEventListener("change", function()
+	{
+		reader.readAsText(this.files[0]);
+	});
+}
