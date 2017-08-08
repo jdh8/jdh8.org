@@ -43,7 +43,7 @@
 		const result = ast.body;
 
 		result.body = result.body.reduce(concat, []);
-		result.body.filter(function(s){ return s.type === "FunctionDeclaration" }).forEach(transform);
+		result.body.filter(s => s.type === "FunctionDeclaration").forEach(transform);
 
 		return result;
 	}
