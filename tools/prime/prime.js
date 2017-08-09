@@ -20,7 +20,7 @@
 /**
  * This primality test module is written in asm.js
  *
- * @returns {{test: function}} Exports of this module
+ * @returns {Object<string, function>} Exports of this module
  */
 function Prime()
 {
@@ -32,9 +32,9 @@ function Prime()
 	 * The return type should have been unsigned, but asm.js does not allow
 	 * this.  Cast back to unsigned to get the proper value.
 	 *
-	 * @param {int} a  Multiplicand, unsigned
-	 * @param {int} b  Multiplier, unsigned
-	 * @param {int} m  Module, unsigned
+	 * @param {int} a - Multiplicand, unsigned
+	 * @param {int} b - Multiplier, unsigned
+	 * @param {int} m - Module, unsigned
 	 *
 	 * @returns {signed} <code>a * b % m |0</code>
 	 */
@@ -58,9 +58,9 @@ function Prime()
 	 * The return type should have been unsigned, but asm.js does not allow
 	 * this.  Cast back to unsigned to get the proper value.
 	 *
-	 * @param {int} base  Base, unsigned
-	 * @param {int} exp   Exponent, unsigned
-	 * @param {int} mod   Module, unsigned
+	 * @param {int} base - Base, unsigned
+	 * @param {int} exp  - Exponent, unsigned
+	 * @param {int} mod  - Module, unsigned
 	 *
 	 * @returns {signed} <code>Math.pow(base, exp) % m |0</code>
 	 */
@@ -89,11 +89,11 @@ function Prime()
 	 *
 	 * @summary Subtest of {@link Prime~test}
 	 *
-	 * @param {int} tester   Tester prime, unsigned
-	 * @param {int} n        Number to test, unsigned
-	 * @param {int} Nminus1  <code>n - 1</code>
-	 * @param {int} oddpart  Leading odd part of <code>n - 1</code>
-	 * @param {int} lowest   Lowest bit of <code>n - 1</code>
+	 * @param {int} tester  - Tester prime, unsigned
+	 * @param {int} n       - Number to test, unsigned
+	 * @param {int} Nminus1 - <code>n - 1</code>
+	 * @param {int} oddpart - Leading odd part of <code>n - 1</code>
+	 * @param {int} lowest  - Lowest bit of <code>n - 1</code>
 	 *
 	 * @returns {signed} Zero if <var>n</var> must be composite.
 	 */
@@ -125,7 +125,7 @@ function Prime()
 	/**
 	 * @summary Deterministic Miller–Rabin primality test
 	 *
-	 * @param {int} n  Number to test, unsigned
+	 * @param {int} n - Number to test, unsigned
 	 *
 	 * @returns {signed} 2 if prime, 0 if composite, 1 if neither
 	 *
@@ -168,7 +168,7 @@ function Prime()
 	/**
 	 * @summary Test if a number is a 32-bit unsigned integer
 	 *
-	 * @param {double} x  Number to test
+	 * @param {double} x - Number to test
 	 *
 	 * @returns {signed} Whether a 32-bit unsigned integer represents x
 	 */
