@@ -12,4 +12,11 @@
     - title: Whiteboard
       href: /tools/whiteboard/
 - title: Wbridge5
-  href: https://jdh8.gitbooks.io/wbridge5/content/
+  href: /wbridge5/
+  children:
+    - title: Partnership bidding
+      href: /wbridge5/partnership/
+    - title: Competitive bidding
+      href: /wbridge5/compentitive/
+    - title: Defensive bidding
+      href: /wbridge5/defensive/
