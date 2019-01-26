@@ -18,14 +18,4 @@ Actually, it is not.  Whether `I` is complex or imaginary, `I * y` evaluates to
 (+0, <var>y</var>) when added with a real number.  If <var>x</var> happens to
 be -0, its sign is not preserved because -0 + +0 = +0.
 
-The following solution should be okay.
-
-```c
-inline double _Complex CMPLX(double x, double y)
-{
-	return x - I * -y;
-}
-```
-
-Nevertheless, GCC and clang fail to optimized it out.  We can only stick to
-compiler-specific constructs for now. :(
+I think we can only stick with compiler-specific constructs for now. :(
