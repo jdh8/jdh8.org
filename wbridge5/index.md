@@ -15,8 +15,8 @@ many experts and books for playing that writing one more book is infeasible for
 me.
 
 Wbridge5 has a 2/1 bidding system with French flavors, as it originates from
-France.  Some French conventions greatly improves bidding structure from *the*
-American, so Wbridge5 incorporates them.  Others not so profitable are not
+France.  Some French conventions greatly improves bidding structure from the
+American, so Wbridge5 incorporates them.  Others not so advantageous are not
 included in Wbridge5.
 
 [champ]: https://bridgebotchampionship.com/home/world-computer-bridge-championship/
