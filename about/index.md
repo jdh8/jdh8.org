@@ -91,7 +91,7 @@ Access to the source code is a precondition for this.
 </li>
 </ol>
 
-[CC]: http://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW
+[CC]: http://creativecommons.org/licenses/by-sa/4.0/deed
 [FreeSW]: https://www.gnu.org/philosophy/free-sw.html
 [GPL]: https://www.gnu.org/licenses/gpl.html
 [MIT]: https://github.com/mmistakes/skinny-bones-jekyll/blob/master/LICENSE
