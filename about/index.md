@@ -24,8 +24,6 @@ improved its modules of [matrix function][MatF] and of [Kronecker
 product][KroneckerProd].
 
 ### Footprints ###
-* [Integration by me][WP]
-* [Civics Project of Taipei Medical University](http://civics.tmu.edu.tw/)
 * [Facebook](https://www.facebook.com/jdh863)
 * [Google+](https://plus.google.com/+%E4%BD%95%E9%9C%87%E9%82%A6-jdh8?rel=author)
 * Wikipedia
@@ -53,16 +51,13 @@ dynamically, mine hardcoded.\]
 [SearchZh]: https://duckduckgo.com/?q=%E4%BD%95%E9%9C%87%E9%82%A6
 [SHA-1]: https://en.wikipedia.org/wiki/SHA-1
 [TMU]: http://www.tmu.edu.tw/v3/main.php
-[WP]: http://jdh8.org
 
 About this site
 ---------------
-This site is to help [*Integration by me*][WP], whose content is in mathematics
-and computer science.
+This site is primarily about mathematics and computer science.
 
-I set up this site becuase [GitHub Pages][GHP] uses [Jekyll][Jekyll], enabling
-me to write modularized stylesheets in [Sass][Sass], which can also be loaded
-across sites.
+[GitHub Pages][GHP] uses [Jekyll][Jekyll], enabling me to write modularized
+stylesheets in [Sass][Sass], which can also be loaded across sites.
 
 [GHP]: https://pages.github.com/
 [Jekyll]: http://jekyllrb.com/
@@ -71,8 +66,7 @@ across sites.
 Copyright notice
 ----------------
 On this site, content is under [CC BY-SA 4.0][CC], source code under
-[GPLv3+][GPL], but the [upstream][Up] is under more permissive [MIT
-License][MIT].  I choose free media as possible.
+[GPLv3+][GPL].  I choose free media as possible.
 
 If you have no time for these tl;dr licenses, you only have to remember that
 this site is [free software][FreeSW].  You have the Four Freedoms:
@@ -94,5 +88,4 @@ Access to the source code is a precondition for this.
 [CC]: http://creativecommons.org/licenses/by-sa/4.0/deed
 [FreeSW]: https://www.gnu.org/philosophy/free-sw.html
 [GPL]: https://www.gnu.org/licenses/gpl.html
-[MIT]: https://github.com/mmistakes/skinny-bones-jekyll/blob/master/LICENSE
 [Up]: https://github.com/mmistakes/skinny-bones-jekyll
