@@ -14,8 +14,8 @@ About me
 </a>
 </div>
 
-I am [**Chen-Pang He**][SearchEn] ([**何震邦**][SearchZh]), studying medicine
-in [Taipei Medical University][TMU].
+I am [**Chen-Pang He**][SearchEn] ([**何震邦**][SearchZh]), M.D.,
+[Taipei Medical University][TMU].
 
 I started writing [web pages][HTML] since 2000 and fell in love with [C++][Cxx]
 in [high school][CK].  I tried to make some software of [numerical linear
