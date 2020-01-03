@@ -14,6 +14,8 @@
 - title: Wbridge5
   href: /wbridge5/
   children:
+    - title: General understandings
+      href: /wbridge5/general/
     - title: Partnership bidding
       href: /wbridge5/partnership/
     - title: Competitive bidding
