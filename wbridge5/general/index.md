@@ -13,9 +13,8 @@ Notations
 ♥4 is a spot card.
 
 Patterns are shown with hyphens, e.g. 5-4-3-1 refers to a hand with a 5-card
-suit, a 4-card suit, a 3-card suit, and a singleton.  Distributions are shown
-with equal signs, e.g. 5=4=3=1 means 5 spades, 4 hearts, 3 diamonds, and 1
-club.
+suit, a 4-card suit, a 3-card suit, and a singleton.  Shapes are shown with
+equal signs, e.g. 5=4=3=1 means 5 spades, 4 hearts, 3 diamonds, and 1 club.
 
 Hand evaluation
 ---------------
