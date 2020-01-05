@@ -2,6 +2,7 @@
 layout: post
 title: Responder's direct cuebid
 categories: Bridge
+tags: Bidding
 ---
 <link rel="stylesheet" href="/style/bridge.css">
 

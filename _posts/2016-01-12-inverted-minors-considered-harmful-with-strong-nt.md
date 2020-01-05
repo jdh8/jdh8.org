@@ -2,7 +2,7 @@
 layout: post
 title: Inverted minors considered harmful with strong notrump
 categories: Bridge
-tags: Convention
+tags: Convention Bidding
 ---
 <link rel="stylesheet" href="/style/bridge.css">
 
