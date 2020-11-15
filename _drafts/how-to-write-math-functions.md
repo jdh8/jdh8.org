@@ -1,19 +1,36 @@
 ---
 layout: post
-title: How to write math functions
+title: How to write mathematical functions
 ---
-Writing math functions seems to be a mission impossible, especially
-writing ones as fast and as precise as the ones in your systems.
-Nevertheless, somebody managed to do that, like the ones who wrote the
-math functions in your computers, phones, calculators, and game
-consoles.  Some of them are open source, like glibc and musl.  There are
-also fine ones in [metallic][metallic], as a shameless plug.
+It is achievable to write fast and precise mathematical functions.
+There are cutting-edge implementations in computers, phones, calculators,
+and game consoles.  Some of them are open source, like glibc and musl,
+from which we can learn the state of the art.  I have also been working
+on mathematics in [metallic][metallic], as a shameless plug.
 
 [metallic]: https://github.com/jdh8/metallic
 
-Math functions are usually written software.  Some may think math
-functions are better made hardware instructions.  The trend is to have
-the hardware deal with only basic operations after decades of evolution.
-The only popular architecture with transcendental instructions is
-arguably x87.  Therefore, we usually implement math functions with
-required operations in IEEE 754 and integer operations via type punning.
+Mathematical functions are usually written software instead of hardware
+instructions.  The trend is to have the hardware deal with only basic
+operations after decades of evolution.  The only popular architecture
+with transcendental instructions is arguably x87.  Mathematical
+functions are usually computed with only required operations in IEEE 754
+and integer operations via type punning.
+
+Target system
+-------------
+### Instruction set
+
+### Programming language
+
+Rounding
+--------
+### Double rounding
+
+### Exact arithmetics
+
+Approximation
+-------------
+### Table maker's dilemma
+
+### Remez algorithm
