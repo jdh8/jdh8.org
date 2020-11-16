@@ -25,9 +25,29 @@ supported.  Other operations are less available even if they are
 _required_ by IEEE 754.  For example, `fmod` rarely compiles to a single
 instruction.  It is usually done by long division, which in turn
 translates to a series of integer operations or partial remainder
-instructions.
+instructions.  This is also an example where operators in other
+programming languages can be more expensive than expected, like `%` in
+JavaScript or Python.
 
 ### Programming language
+It is recommended to implement mathematical functions in C.  Its
+sparsity of sequence points allow long expressions to be evaluated in a
+fast and precise way.  For instance, `a * b + c` can compile to a fused
+multiply–add for supporting platforms.  On the other hand, explicitly
+assign to an intermediate to force rounding.
+
+```c
+// Nearest integer for a nonnegative argument
+float nearest(float x)
+{
+    const float rectifier = 0x1p23f;
+    float y = x + rectifier;
+    return y - rectifier;
+
+    // Wrong: can be optimized to (x + 0)
+    return x + rectifier - rectifier;
+}
+```
 
 Rounding
 --------
