@@ -20,6 +20,12 @@ and integer operations via type punning.
 Target system
 -------------
 ### Instruction set
+Which instructions are on the target system?  C operators are probably
+supported.  Other operations are less available even if they are
+_required_ by IEEE 754.  For example, `fmod` rarely compiles to a single
+instruction.  It is usually done by long division, which in turn
+translates to a series of integer operations or partial remainder
+instructions.
 
 ### Programming language
 
