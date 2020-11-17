@@ -31,10 +31,10 @@ JavaScript or Python.
 
 ### Programming language
 It is recommended to implement mathematical functions in C.  Its
-sparsity of sequence points allow long expressions to be evaluated in a
-fast and precise way.  For instance, `a * b + c` can compile to a fused
-multiply–add for supporting platforms.  On the other hand, explicitly
-assign to an intermediate to force rounding.
+contractions allow long expressions to be evaluated in a fast and
+precise way.  For instance, `a * b + c` can compile to a fused multiply–
+add for supporting platforms.  On the other hand, explicitly assign to
+an intermediate to force rounding.
 
 ```c
 // Nearest integer for a nonnegative argument
@@ -51,7 +51,29 @@ float nearest(float x)
 
 Rounding
 --------
+Rounding half to even is the default rounding in IEEE 754.  The roundoff
+error of a series of operations by this unbiased rounding is only
+proportional to the square root of the number of operations.  This will
+be the implied rounding method throughout this article unless otherwise
+specified.
+
 ### Double rounding
+Rounding to nearest is non-associative.  If we round 1.49 to the nearest
+tenth and then to the nearest integer, it becomes 2.  Rounding to
+midpoints must be avoided in intermediate roundings.
+
+Rounding to odd is a good intermediate rounding for binary numbers.
+Inexact numbers are rounded to the nearest number with an odd
+significand.  This preserves the result of the final rounding because
+only numbers with even significands can be midpoints or exact in a
+coarser precision.  Rounding to odd is also associative like directed
+roundings as values between representations are unanimously rounded to
+either of them.
+
+- [When double rounding is odd](https://hal.inria.fr/inria-00070603v2/document),
+  by Sylvie Boldo and Guillaume Melquiond
+- [GCC avoids double rounding errors with round-to-odd](https://www.exploringbinary.com/gcc-avoids-double-rounding-errors-with-round-to-odd/),
+  by Rick Regan
 
 ### Exact arithmetics
 
