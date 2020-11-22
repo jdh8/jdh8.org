@@ -78,17 +78,58 @@ either of them.
 ### Exact addition
 Exact error of addition can be obtained with default rounding.  This
 technique is useful for storing precise intermediates to stop
-propagation of error.
+propagation of error.  The idea is to find exact <var>s</var> +
+<var>e</var> = <var>a</var> + <var>b</var>, where <var>s</var> is the
+rounded sum, and <var>e</var> is the error term.  Exact error term is
+defined where the rounded sum does not overflow.
 
-The 3-op compensated sum produces precise <var>s</var> + <var>e</var>
-= <var>a</var> + <var>b</var> with strict preconditions.  The base of
-the floating-point system must be at most 3, and ffs(<var>a</var>) ≥
-ulp(<var>b</var>).  The error term <var>e</var> is precise if the
-rounded sum <var>s</var> is finite.
+Compensated summation by 3 operations produces precise results with
+preconditions.  The base of the floating-point system (`FLT_RADIX`) can
+be at most 3, and logb(<var>a</var>) ≥ logb(<var>b</var>).
 
 ```c
 s = a + b;
 e = a - s + b;
+```
+
+One can generalize algorithm by a comparison and a branch, as
+|<var>a</var>| ≥ |<var>b</var>| implies logb(<var>a</var>) ≥
+logb(<var>b</var>).  Branching is inefficient, though.  There is another
+unbranched algorithm of 6 operations working most of the time.  Given
+finite rounded sum, this algorithm overflows only if an operand is the
+largest finite representable number or its negative.
+
+```c
+s = a + b;
+x = a - s;
+y = b - s;
+e = (a + x) + (b + y);
+```
+
+- [On the robustness of the 2Sum and Fast2Sum algorithms](https://hal-ens-lyon.archives-ouvertes.fr/ensl-01310023v2/document)
+  by Sylvie Boldo, Stef Graillat, and Jean-Michel Muller
+
+### Exact multiplication
+First, a `double` is large enough to store exact product of every pair
+of `float`s, enormous or tiny.  This is straightforward and fast if
+double-precision multiplication is supported, which is assumed unless
+proven otherwise.
+
+```c
+double multiply(float a, float b)
+{
+    return (double)a * b;
+}
+```
+
+Then, we try to find <var>s</var> + <var>e</var> =
+<var>a</var><var>b</var>.  If you happen to have FMA instruction
+available, don't hesitate to use it.  This can be determined by
+`FP_FAST_FMA[FL]?` macros in C.
+
+```c
+s = a * b;
+e = fma(a, b, -s);
 ```
 
 Approximation
