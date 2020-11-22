@@ -75,7 +75,21 @@ either of them.
 - [GCC avoids double rounding errors with round-to-odd](https://www.exploringbinary.com/gcc-avoids-double-rounding-errors-with-round-to-odd/),
   by Rick Regan
 
-### Exact arithmetics
+### Exact addition
+Exact error of addition can be obtained with default rounding.  This
+technique is useful for storing precise intermediates to stop
+propagation of error.
+
+The 3-op compensated sum produces precise <var>s</var> + <var>e</var>
+= <var>a</var> + <var>b</var> with strict preconditions.  The base of
+the floating-point system must be at most 3, and ffs(<var>a</var>) ≥
+ulp(<var>b</var>).  The error term <var>e</var> is precise if the
+rounded sum <var>s</var> is finite.
+
+```c
+s = a + b;
+e = a - s + b;
+```
 
 Approximation
 -------------
