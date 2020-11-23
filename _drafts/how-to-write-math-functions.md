@@ -132,6 +132,31 @@ s = a * b;
 e = fma(a, b, -s);
 ```
 
+Next, without all the hardware witchcraft, we can still count on
+schoolbook multiplication.  With even number of significant digits, one
+can equally split them and obtain the higher part with a bitwise AND.
+
+Moreover, one can equally split a binary significant with default
+rounding.  If the number of significant bits is odd, the split is done
+with 3 instructions and risk of overflow for huge inputs.  Take IEEE 754
+double precision for example, which has 53 significant bits.  Its magic
+multiplier is 2<sup>27</sup> + 1, where 27 = (53 + 1) / 2.
+
+```c
+double split(double x)
+{
+    double s = (0x1p27 + 1) * x;
+    double c = x - s;
+
+    return s + c;
+}
+```
+
+Subtract the returned higher part from the argument to obtain the
+lower part.  Each part is guaranteed to have at most 26 significant
+bits.  The possibility that the two parts can have opposite signs
+covers that seemingly lost bit of information.
+
 Approximation
 -------------
 ### Table maker's dilemma
