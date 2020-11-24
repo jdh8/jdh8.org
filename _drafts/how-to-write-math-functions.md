@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to write mathematical functions
+category: Numerical analysis
 ---
 It is achievable to write fast and precise mathematical functions.
 There are cutting-edge implementations in computers, phones, calculators,
