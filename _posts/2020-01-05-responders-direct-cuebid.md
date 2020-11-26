@@ -13,23 +13,23 @@ There are two popular usage of this bid:
 * Generic game force
 
 I suggest a combination of these.  Cuebid means limit raise __or__ generic game
-force.  However, 3+-card support is still promised after a major opening.
+force.  However, 3+ card support is still promised after a major opening.
 
 After a major opening
 ---------------------
 For pigeonhole principle, you have either of these:
-* 3+-card support
-* 5+-card unbid suit
+* 3+ card support
+* 5+ card unbid suit
 * 4-4 in unbid suits
-* 4+-card adverse suit
+* 4+ card adverse suit
 
 With game-forcing values yet without 3-card support, you can better describe
 your hand by another call.
-* 5+-card unbid suit: free bid
+* 5+ card unbid suit: free bid
 * 4-4 in unbid suits: negative double
-* 4+-card adverse suit: 3NT
+* 4+ card adverse suit: 3NT
 
-Therefore, it is safe to assume that the direct cuebid promises 3+-card
+Therefore, it is safe to assume that the direct cuebid promises 3+ card
 support, no matter of strength.
 
 After a minor opening
