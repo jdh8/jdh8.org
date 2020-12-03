@@ -161,5 +161,30 @@ covers that seemingly lost bit of information.
 Approximation
 -------------
 ### Table maker's dilemma
+The cost of a correctly rounded transcendental function is unknown
+unless probed with brute force.  Faithfully rounded versions are much
+faster and generally preferable, i.e. the returned results can be
+rounded either up or down.  This is because no matter how precise
+intermediate results are, they can be close to a turning point of the
+given rounding, like a midpoint of two representable numbers in rounding
+to nearest or a representable number in a directed rounding.  For
+example, <var>x</var> is a mathematical result equal to
+<var>x</var><sup>\*</sup> + 0.49 ulp, where <var>x</var><sup>\*</sup> is
+an exact floating-point.  An exquisite approximation gives
+<var>x</var><sup>\*</sup> + 0.51 ulp, which is only 0.02 ulp off.
+Nevertheless, it becomes <var>x</var><sup>\*</sup> + 1 ulp after default
+rounding, which is 1 ulp off from the correctly rounded
+<var>x</var><sup>\*</sup>.
+
+An algebraic function can be made correctly rounded by solving its
+polynomial equation at the turning point and compare the result.
+However, this extra cost is not always welcome if faithful rounding is
+enough for the spec.  Cubic root is not required to be correctly rounded
+in IEEE 754.  As a result, it is implemented as faithfully rounded in
+metallic.  Its error can be even larger in glibc and other C libraries.
+
+- [Errors in math functions (glibc)](https://www.gnu.org/software/libc/manual/html_node/Errors-in-Math-Functions.html).
+  This article states that their `cbrtf` is faithfully rounded while
+  `cbrt` can incur an error of 3 ulp.
 
 ### Remez algorithm
