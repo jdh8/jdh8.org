@@ -188,3 +188,5 @@ metallic.  Its error can be even larger in glibc and other C libraries.
   `cbrt` can incur an error of 3 ulp.
 
 ### Remez algorithm
+Remez exchange algorithm is an interative minimax that minimizes error
+of a rational approximation of a function.
