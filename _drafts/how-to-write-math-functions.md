@@ -189,4 +189,9 @@ metallic.  Its error can be even larger in glibc and other C libraries.
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
-of a rational approximation of a function.
+of a rational approximation of a function.  The best explanation of this
+algorithm I found is [from the Boost libraries][boost].  I recommend
+[Remez.jl][remez.jl], a public module in the Julia language.
+
+[boost]: https://www.boost.org/doc/libs/1_75_0/libs/math/doc/html/math_toolkit/remez.html
+[remez.jl]: https://github.com/simonbyrne/Remez.jl
