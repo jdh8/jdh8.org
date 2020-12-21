@@ -191,7 +191,42 @@ metallic.  Its error can be even larger in glibc and other C libraries.
 Remez exchange algorithm is an interative minimax that minimizes error
 of a rational approximation of a function.  The best explanation of this
 algorithm I found is [from the Boost libraries][boost].  I recommend
-[Remez.jl][remez.jl], a public module in the Julia language.
+[Remez.jl][remez.jl], a public module in the Julia language.  It works
+out of the box after installation.
 
 [boost]: https://www.boost.org/doc/libs/1_75_0/libs/math/doc/html/math_toolkit/remez.html
 [remez.jl]: https://github.com/simonbyrne/Remez.jl
+
+For example, the following snippet finds a quintic approximation of
+2<sup><var>x</var></sup> in [-0.5, 0.5] with minimax absolute errors.
+The last argument is 0 because we want a polynomial, whose denominator
+is constant (of degree 0) if regarded as a rational function.
+
+```jl
+import Remez
+
+N, D, E, X = Remez.ratfn_minimax(x -> 2^x, (-0.5, 0.5), 5, 0)
+```
+
+The variables `N`, `D`, `E`, `X` are filled respectively with the
+numerator, the denominator, the maximum error, and coordinates of the
+extrema of the error.  In this case, we are interested in `N` and `E`
+only.  If the snippet is run in the REPL, it is straightforward to
+inspect variables.
+
+```
+julia> N
+6-element Array{BigFloat,1}:
+ 1.000000075489570475572779794395844118951112905200712713320943557819539899495158
+ 0.6931472254087463335017125386919482653892870189749332813071956686258532912523762
+ 0.240221073743231850648976794579911538382218748758607600525638479145201183035736
+ 0.05550297297715658754616473211294955443754414233482966738252485266340806305907259
+ 0.00967603635813692980671471668302651117643390961277773275960600973510019542544693
+ 0.001341000536192704201450246154614164578606130077333414968207795258574915422524853
+
+julia> E
+7.558205929025332288032376239843205928422222431391723125142017345498949353212165e-08
+```
+
+The resulting coefficients are in ascending order.  For example, the
+first element of `N` is the constant term.
