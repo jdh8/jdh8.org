@@ -158,8 +158,6 @@ lower part.  Each part is guaranteed to have at most 26 significant
 bits.  The possibility that the two parts can have opposite signs
 covers that seemingly lost bit of information.
 
-Approximation
--------------
 ### Table maker's dilemma
 The cost of a correctly rounded transcendental function is unknown
 unless probed with brute force.  Faithfully rounded versions are much
@@ -186,6 +184,10 @@ metallic.  Its error can be even larger in glibc and other C libraries.
 - [Errors in math functions (glibc)](https://www.gnu.org/software/libc/manual/html_node/Errors-in-Math-Functions.html).
   This article states that their `cbrtf` is faithfully rounded while
   `cbrt` can incur an error of 3 ulp.
+
+Approximation
+-------------
+### Argument reduction
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
@@ -230,3 +232,7 @@ julia> E
 
 The resulting coefficients are in ascending order.  For example, the
 first element of `N` is the constant term.
+
+### Transformations
+
+### Polynomial evaluation
