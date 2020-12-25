@@ -176,10 +176,12 @@ rounding, which is 1 ulp off from the correctly rounded
 
 An algebraic function can be made correctly rounded by solving its
 polynomial equation at the turning point and compare the result.
-However, this extra cost is not always welcome if faithful rounding is
-enough for the spec.  Cubic root is not required to be correctly rounded
-in IEEE 754.  As a result, it is implemented as faithfully rounded in
-metallic.  Its error can be even larger in glibc and other C libraries.
+However, this extra cost is unwelcome if faithful rounding is enough.
+It is unlikely that a correctly rounded implementation solves a
+real-world problem that a faithfully rounded one does not.  Cubic root
+is not required to be correctly rounded in IEEE 754.  As a result, it is
+implemented as faithfully rounded in metallic.  Its error can be even
+larger in glibc and other C libraries.
 
 - [Errors in math functions (glibc)](https://www.gnu.org/software/libc/manual/html_node/Errors-in-Math-Functions.html).
   This article states that their `cbrtf` is faithfully rounded while
@@ -187,6 +189,10 @@ metallic.  Its error can be even larger in glibc and other C libraries.
 
 Approximation
 -------------
+Eventually we break down mathematical functions to basic arithmetics.
+This section covers how to reduce, transform, and approximate functions
+to common arithmetic operations.
+
 ### Argument reduction
 
 ### Remez algorithm
