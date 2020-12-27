@@ -205,8 +205,12 @@ with a mathematical identity.  For example, to compute `exp` for a
 binary floating-point format, we can divide its argument <var>x</var> by
 ln 2.
 
-<div class="center"><var>x</var> = <var>n</var> ln 2 + <var>a</var></div>
-<div class="center">exp <var>x</var> = 2<sup><var>n</var></sup> exp <var>a</var></div>
+<p>
+	\begin{align*}
+		x &= n \ln 2 + r \\
+		\exp x &= 2^n \exp r
+	\end{align*}
+</p>
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
