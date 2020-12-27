@@ -215,16 +215,17 @@ ln 2.
 Where <var>n</var> is an integer, multiplication by 2<sup><var>n</var></sup>
 can be computed with bit twiddling.  If we pick <var>n</var> as an
 integer nearest to <var>x</var>, we simultaneously restrict <var>r</var>
-into [-0.5, 0.5].
+into [-0.5 ln 2, 0.5 ln 2].
 
-Approximation to exp <var>r</var> is fast because [-0.5, 0.5] is a short
-interval.  The target function can be approximated with few terms.
+Approximation to exp <var>r</var> is fast because [-0.5 ln 2, 0.5 ln 2]
+is a short interval.  The target function can be approximated with few
+terms to achieve desired precision.
 
 It is also precise because <var>r</var> is small.  Computations
 involving small numbers are precise.  Floating-points are dense near the
 origin since they are essentially scientific notation.  In IEEE 754
 binary formats, there are the same number of representations in (0, 1.5)
-and in (1.5, ∞).
+and in (1.5, ∞).  Therefore, it is wise to shift the domain close to 0.
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
