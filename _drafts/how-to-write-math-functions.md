@@ -3,6 +3,12 @@ layout: post
 title: How to write mathematical functions
 category: Numerical analysis
 ---
+<style>
+.center {
+	text-align: center;
+}
+</style>
+
 It is achievable to write fast and precise mathematical functions.
 There are cutting-edge implementations in computers, phones, calculators,
 and game consoles.  Some of them are open source, like glibc and musl,
@@ -194,6 +200,13 @@ This section covers how to reduce, transform, and approximate functions
 to common arithmetic operations.
 
 ### Argument reduction
+Sometimes we can reduce the domain to approximate to a short interval
+with a mathematical identity.  For example, to compute `exp` for a
+binary floating-point format, we can divide its argument <var>x</var> by
+ln 2.
+
+<div class="center"><var>x</var> = <var>n</var> ln 2 + <var>a</var></div>
+<div class="center">exp <var>x</var> = 2<sup><var>n</var></sup> exp <var>a</var></div>
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
