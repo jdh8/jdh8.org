@@ -227,6 +227,12 @@ origin since they are essentially scientific notation.  In IEEE 754
 binary formats, there are the same number of representations in (0, 1.5)
 and in (1.5, ∞).  Therefore, it is wise to shift the domain close to 0.
 
+### Transformations
+Most mathematical functions we compute have some nice property such as
+continuity, differentiability, or symmetry.  Taking advantage of these
+properties allows omitting terms in the approximant and hence saving
+computations.
+
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
 of a rational approximation of a function.  The best explanation of this
@@ -270,7 +276,5 @@ julia> E
 
 The resulting coefficients are in ascending order.  For example, the
 first element of `N` is the constant term.
-
-### Transformations
 
 ### Polynomial evaluation
