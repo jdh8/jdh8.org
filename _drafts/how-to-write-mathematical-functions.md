@@ -233,6 +233,50 @@ continuity, differentiability, or symmetry.  Taking advantage of these
 properties allows omitting terms in the approximant and hence saving
 computations.
 
+When a function <var>f</var> **passes through and is monotonous around
+the origin**, divide it by its own variable <var>x</var> and approximate
+the quotient <var>g</var> instead.
+
+<p>
+	\begin{align*}
+		f(0) &= 0 \\
+		f(x) &= x g(x)
+	\end{align*}
+</p>
+
+This explicitly omits the constant term and shrinks the overall relative
+error.  The value of <var>g</var>(0) can be any finite number.  We define
+<var>g</var> as a continuous extension for rigor.
+
+<p>
+	\[
+		g(x) = \begin{cases}
+			\displaystyle \frac{f(x)}{x} & \mbox{if } x \ne 0 \\
+			\displaystyle \lim_{t \to 0} \frac{f(t)}{t} & \mbox{if } x = 0
+		\end{cases}
+	\]
+</p>
+
+Given an approximant <var>ĝ</var> of <var>g</var>, the overall
+absolute error <var>x</var> |<var>ĝ</var> &minus; <var>g</var>|
+tends to 0 when <var>x</var> also approaches 0.  This enables
+approximating <var>g</var> without a weight function and simplifies
+calculation.
+
+When <var>f</var> is an **even function**, take it as another function
+<var>g</var> of a squared variable.
+
+<p>
+	\begin{align*}
+		f(x) &= f (-x) \\
+		f(x) &= g \left( x^2 \right) \\
+		g(x) &= f \left( \sqrt x \right)
+	\end{align*}
+</p>
+
+This explicitly omits odd terms and halves the degree of the
+approximant.
+
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
 of a rational approximation of a function.  The best explanation of this
