@@ -233,9 +233,9 @@ continuity, differentiability, or symmetry.  Taking advantage of these
 properties allows omitting terms in the approximant and hence saving
 computations.
 
-When a function <var>f</var> **passes through and is monotonous around
-the origin**, divide it by its own variable <var>x</var> and approximate
-the quotient <var>g</var> instead.
+When a function <var>f</var> **passes through and is monotone at the
+origin**, divide it by the identity function and approximate the
+quotient <var>g</var> instead.
 
 <p>
 	\begin{align*}
@@ -276,6 +276,22 @@ When <var>f</var> is an **even function**, take it as another function
 
 This explicitly omits odd terms and halves the degree of the
 approximant.
+
+An **odd function** is a combination of the above two.  It is a product
+of the identity function and an even function.
+
+<p>
+	\begin{align*}
+		f(x) &= -f (-x) \\
+		f(x) &= x g \left( x^2 \right) \\
+		g(x) &= \frac{f \left( \sqrt x \right)}{\sqrt x}
+	\end{align*}
+</p>
+
+The value of <var>g</var>(0) does not affect approximation of
+<var>g</var> as it creates no hole on the domain.  In practice, set the
+lower bound to a tiny positive number like 2<sup>-200</sup>, and
+everything is fine.
 
 ### Remez algorithm
 Remez exchange algorithm is an interative minimax that minimizes error
