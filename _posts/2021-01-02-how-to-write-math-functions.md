@@ -336,3 +336,25 @@ The resulting coefficients are in ascending order.  For example, the
 first element of `N` is the constant term.
 
 ### Polynomial evaluation
+The best polynomial evaluation method depends on the system.  For
+example, [pipelining greatly influences execution time][pipe].  Luckily,
+there are well-known evaluation schemes that provide decent performance
+and reasonable errors.
+
+[pipe]: http://lolengine.net/blog/2011/9/17/playing-with-the-cpu-pipeline
+
+**Horner's scheme** produces the fewest operations.  It is clearly the
+fastest if its argument is already parallelized, such as a vector or a
+tensor.  It is also usually the most accurate method for a polynomial
+approximant of a well-conditioned function.  Nevertheless, its
+dependency chain is also the longest.  It makes poor use of the pipeline
+because all operations except one depend on another.  Hence, it is less
+than ideal on single-threaded systems.
+
+On the other hand, **Estrin's scheme** tries to be as parallel as
+possible.  It groups terms in a binary fashion to achieve the shallowest
+dependency tree in expense of O(log(<var>n</var>)) extra squarings.
+
+There are also other evaluation schemes with different pros and cons.
+If this is critical for your work, benchmark to find the most suited
+one.
