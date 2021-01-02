@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to write mathematical functions
+title: How to program mathematical functions
 category: Numerical analysis
 ---
 <style>
@@ -17,18 +17,17 @@ from which we can learn.  I have also been working on mathematics in
 
 [metallic]: https://github.com/jdh8/metallic
 
-Implementations of mathematical functions are usually software instead
-of hardware instructions.  The trend is to have the hardware deal with
-only basic operations after decades of evolution.  The solely popular
-architecture with transcendental instructions is arguably x87.  We can
-evaluate functions with only operations required in IEEE 754 and integer
-operations via type punning.
+It may seem that mathematical functions are hardware instructions.  We
+usually code them in software instead.  The trend is to have the
+hardware deal with only basic operations after decades of evolution.  We
+can perform mathematics with only operations required in IEEE 754 and
+integer operations via type punning.
 
 Target system
 -------------
 ### Instruction set
 Which instructions are on the target system?  C operators are probably
-supported.  Other operations are less available even if they are
+supported.  Other operations are not as available even if they are
 _required_ by IEEE 754.  For example, `fmod` rarely compiles to a single
 instruction.  It is usually done by long division, which then translates
 to a series of integer operations or partial remainder instructions.
@@ -37,11 +36,10 @@ languages can be more expensive than expected, like `%` in JavaScript or
 Python.
 
 ### Programming language
-I recommend implementing mathematical functions in C.  With contractions,
-evaluating long expressions can be fast and precise.  For instance, `a *
-b + c` can compile to a fused multiply–add for supporting platforms.
-On the other hand, explicitly assign to an intermediate to force
-rounding.
+I suggest programming mathematical functions in C.  It is fast and
+precise to evaluate complicated expressions with floating-point
+contraction.  On supported platforms, `a * b + c` can compile to a fused
+multiply--add.
 
 ```c
 // Nearest integer for a nonnegative argument
@@ -58,21 +56,21 @@ float nearest(float x)
 
 Rounding
 --------
-Round half to even is the default rounding in IEEE 754.  The roundoff
-error of a series of operations by this unbiased rounding is only
-in O(√<var>n</var>).  This rounding will be the implied rounding method
-throughout this article unless otherwise specified.
+_Round half to even_ is the default rounding in IEEE 754.  The roundoff
+error of a series of <var>n</var> operations by this unbiased rounding
+is only in O(√<var>n</var>).  This rounding will be the implied rounding
+method throughout this article unless otherwise specified.
 
 ### Double rounding
-Rounding to nearest is non-associative.  If we round 1.49 to the nearest
-tenth and then to the nearest integer, it becomes 2.  Rounding to
-midpoints must be avoided in intermediate roundings.
+The default rounding is non-associative.  If we round 1.49 to the
+nearest tenth and then to the nearest integer, it becomes 2.  Rounding
+to midpoints must be avoided in intermediate roundings.
 
-Rounding to odd is a helpful intermediate rounding for binary numbers.
+_Round to odd_ is a helpful intermediate rounding for binary numbers.
 It rounds irrepresentable numbers to the nearest representation with an
 odd significand.  Only numbers with even significands can be midpoints
-or exact in a coarser precision.  Therefore, rounding to odd does not
-interfere with subsequent roundings.  Rounding to odd is also
+or exact in a coarser precision.  Therefore, _round to odd_ does not
+interfere with subsequent roundings.  _Round to odd_ is also
 associative like directed roundings as it rounds all values between
 representations to either of them.
 
@@ -82,28 +80,27 @@ representations to either of them.
   by Rick Regan
 
 ### Exact addition
-We can obtain the exact error of addition with default rounding.  This
-technique is useful for storing precise intermediates to stop the
-propagation of error.  The idea is to find the exact <var>s</var> + <var>
-e</var> = <var>a</var> + <var>b</var>, where <var>s</var> is the rounded
-sum, and <var>e</var> is the error term.  The exact error term is
-defined where the rounded sum does not overflow.
+We can obtain the exact error of addition with the default rounding.
+This technique is useful for storing precise intermediates to stop the
+propagation of error.  The idea is to find <var>s</var> + <var>e</var> =
+<var>a</var> + <var>b</var>, where <var>s</var> is the rounded
+sum, and <var>e</var> is the error term.  The error term is
+defined when <var>s</var> does not overflow.
 
-Compensated summation by 3 operations produces precise results with
-preconditions.  The base of the floating-point system (`FLT_RADIX`) can
-be at most 3, and logb(<var>a</var>) ≥ logb(<var>b</var>).
+Compensated summation produces precise results with preconditions.  The
+base of the floating-point system (`FLT_RADIX`) can be at most 3, and
+logb(<var>a</var>) ≥ logb(<var>b</var>).
 
 ```c
 s = a + b;
 e = a - s + b;
 ```
 
-We can generalize this algorithm by a comparison and a branch, as
-|<var>a</var>| ≥ |<var>b</var>| implies logb(<var>a</var>) ≥
-logb(<var>b</var>).  Branching is inefficient, though.  There is another
-unbranched algorithm of 6 operations working most of the time.  Given
-finite rounded sum, this algorithm overflows only if an operand is the
-largest finite representable number or its negative.
+We can generalize this algorithm by comparison, as |<var>a</var>| ≥
+|<var>b</var>| implies logb(<var>a</var>) ≥ logb(<var>b</var>).
+Branching is nevertheless inefficient.  There is another unbranched
+algorithm working most of the time.  This algorithm overflows only if an
+operand is the largest finite representation or its negative.
 
 ```c
 s = a + b;
@@ -116,10 +113,10 @@ e = (a + x) + (b + y);
   by Sylvie Boldo, Stef Graillat, and Jean-Michel Muller
 
 ### Exact multiplication
-First, a `double` is large enough to store the exact product of every
-pair of `float`s, enormous or tiny.  This method is straightforward and
-fast if double-precision multiplication is supported, which is assumed
-unless proven otherwise.
+First, a `double` is large enough to store the exact product of any two
+`float`s.  Therefore, it is preferred to cast and multiply.  This method
+is straightforward and fast, and double-precision multiplication is
+widely supported.
 
 ```c
 double multiply(float a, float b)
@@ -129,9 +126,8 @@ double multiply(float a, float b)
 ```
 
 Then, we try to find <var>s</var> + <var>e</var> =
-<var>a</var><var>b</var>.  If you happen to have FMA instruction
-available, don't hesitate to use it.  Determine this feature by
-`FP_FAST_FMA[FL]?` macros in C.
+<var>a</var><var>b</var>.  If the FMA instructions are available, use
+them.  Probe this feature with `FP_FAST_FMA[FL]?` macros.
 
 ```c
 s = a * b;
@@ -140,15 +136,12 @@ e = fma(a, b, -s);
 
 Next, without all the hardware witchcraft, we can still count on
 schoolbook multiplication.  With an even number of significant digits,
-one can equally split them and obtain the higher part with a bitwise
-AND.
+equally split them and obtain the higher part with a bitwise AND.
 
-Moreover, one can equally split a binary significant with default
-rounding.  If the number of significant bits is odd, the split is
-complete with 3 instructions and the risk of overflow for huge inputs.
-Take IEEE 754 double-precision as an example, which has 53 significant
-bits.  Its magic multiplier is 2<sup>27</sup> + 1, where 27 = (53 + 1) /
-2.
+Even if the number of significant bits is odd, we can split a binary
+significand with the default rounding.  Take IEEE 754 double-precision
+as an example, which has 53 significant bits.  Its magic multiplier is
+2<sup>27</sup> + 1, where 27 = (53 + 1) / 2.
 
 ```c
 double split(double x)
@@ -159,38 +152,36 @@ double split(double x)
     return s + c;
 }
 ```
-
-Subtract the returned higher part from the argument to obtain the
-lower part.  Each part is guaranteed to have at most 26 significant
-bits.  The possibility that the two parts can have opposite signs
-covers that seemingly lost one bit of information.
+The above function returns the higher half of the argument.  We can
+extract the lower half by subtracting the higher half.  Each half is
+guaranteed to have at most 26 significant bits.  The possibility that
+the halves can have opposite signs recovers the seemingly lost bit.
 
 ### Table maker's dilemma
 The cost of a correctly rounded transcendental function is unknown
 unless probed with brute force.  Faithfully rounded versions are much
-faster and generally preferable, i.e. the returned results can be
-rounded either up or down.  No matter how precise intermediate results
-are, they can be close to a turning point of the given rounding.  For
-example, <var>x</var> is a mathematical result equal to
-<var>x</var><sup>\*</sup> + 0.49 ulp, where <var>x</var><sup>\*</sup> is
-an exact floating-point.  An exquisite approximation gives
-<var>x</var><sup>\*</sup> + 0.51 ulp, which is only 0.02 ulp off.
-Nevertheless, it becomes <var>x</var><sup>\*</sup> + 1 ulp after default
-rounding, which is 1 ulp off from the correctly rounded
-<var>x</var><sup>\*</sup>.
+faster and generally preferable, though they may round the mathematical
+value up or down.  No matter how precise intermediate results are, they
+can be close to a turning point of the given rounding.  For example,
+<var>x</var> is a mathematical result equal to <var>x</var><sup>\*</sup>
+\+ 0.49 ulp, where <var>x</var><sup>\*</sup> is an exact floating-point.
+An exquisite approximation gives <var>x</var><sup>\*</sup> + 0.51 ulp,
+which is only 0.02 ulp off.  Nevertheless, it becomes
+<var>x</var><sup>\*</sup> + 1 ulp after default rounding, which is 1 ulp
+off from the correctly rounded <var>x</var><sup>\*</sup>.
 
 We can correctly round an algebraic function by solving its polynomial
 equation at the turning point and compare the results.  However, this
 extra cost is unwelcome if faithful rounding is enough.  It is unlikely
-that a correctly rounded implementation solves a real-world problem that
-a faithfully rounded one does not.  The cubic root is not required to be
-correctly rounded in IEEE 754.  As a result, I made it faithfully
+that a correctly rounded program solves a real-world problem that a
+faithfully rounded one does not.  IEEE 754 does not require correct
+rounding for the cubic root.  Therefore, I made `cbrt` faithfully
 rounded in metallic.  Its error can be even larger in glibc and other C
 libraries.
 
 - [Errors in math functions (glibc)](https://www.gnu.org/software/libc/manual/html_node/Errors-in-Math-Functions.html).
-  This article states that their `cbrtf` is faithfully rounded while
-  `cbrt` can incur an error of 3 ulp.
+  Their `cbrtf` rounds faithfully, while `cbrt` can incur an error of 3
+  ulp.
 
 Approximation
 -------------
@@ -345,9 +336,9 @@ and reasonable errors.
 **Horner's scheme** produces the fewest operations.  It is clearly the
 fastest if its argument is already parallelized, such as a vector or a
 tensor.  It is also usually the most accurate method for a polynomial
-approximant of a well-conditioned function.  Nevertheless, its
-dependency chain is also the longest.  It makes poor use of the pipeline
-because all operations except one depend on another.  Hence, it is less
+approximant of a well-conditioned function.  However, its dependency
+chain is also the longest.  It makes poor use of the pipeline because
+all operations except one depend on another.  Hence, it is less
 than ideal on single-threaded systems.
 
 On the other hand, **Estrin's scheme** tries to be as parallel as
