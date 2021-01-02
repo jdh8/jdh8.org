@@ -2,20 +2,20 @@
 layout: post
 title: How to set charset of all text responses on nginx
 ---
-It's usual that all text files on a site share the same character encoding.
-Especially [UTF-8][utf8] is modern *de facto* standard.  However, the default
+All text files on a site usually share the same character encoding.
+Especially [UTF-8][utf8] is the modern *de facto* standard.  However, the default
 [`charset_types`][types] does not contain `text/css`, let alone other non-plain
-text types e.g. `text/markdown`.
+text types like `text/markdown`.
 
 The default `charset_types` should be `text/*` because most of them are parsed
 in [ASCII][ascii] (`us-ascii`) by default for backward compatibility.  [A
 `text/xml` response is parsed in ASCII][broken] even if [BOM][bom] and [XML
-declaration][decl] tells otherwise.  <small>Therefore, we should really use
+declaration][decl] tells otherwise.  <small>Therefore, we should use
 `application/xml` for XML responses now.</small>
 
-Nevertheless, the `charset_types` setting checks complete matches only, or we
-have to resort to the universal match (`*`).  Luckily, nginx has `map` powered
-with regex and `charset_types` accepts a variable.
+Nevertheless, the `charset_types` setting checks complete matches only.
+Luckily, the `map` directive knows regex, and `charset_types` accepts a
+variable.
 
 ```nginx
 map $sent_http_content_type $charset {
@@ -26,7 +26,7 @@ charset       $charset;
 charset_types *;
 ```
 
-This setting would make nginx specify UTF-8 for all text responses, e.g.
+This setting would make nginx specify UTF-8 for all text responses, such as
 `text/css; charset=utf-8`.
 
 [ascii]: https://en.wikipedia.org/wiki/ASCII

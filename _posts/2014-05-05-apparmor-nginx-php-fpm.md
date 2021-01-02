@@ -10,13 +10,13 @@ module on Ubuntu.  Unlike
 [<abbr title="discretionary access control">DAC</abbr>][DAC]
 in Un\*x, an AppArmor config lists what a process *can* access.  An
 **enforce**d process can only access listed paths; a **complain**ing process
-emits warning when accessing an unlisted path.
+emits warnings when accessing unlisted files.
 
 However, there is no default config for [nginx][nginx] and [php-fpm][php-fpm].
-To prevent the web server being hacked, causing *systemic infection*, let's
+To prevent the webserver from being hacked, causing *systemic infection*, let's
 write configs on our own!  The useful tool `aa-genprof` gets most of the jobs
-done, but some paths are still missing, especially sockets.  Therefore, I
-publish my settings as reference.
+done, but some paths, especially sockets, are still missing.  Therefore, I
+publish my settings as a reference.
 
 * Document roots are at /srv/www/\*/.
 * I prefer [Unix domain sockets][Unix socket] to
@@ -30,7 +30,7 @@ publish my settings as reference.
 [php-fpm]:        http://php-fpm.org/
 [Unix socket]:    https://en.wikipedia.org/wiki/Unix_domain_socket
 
-The following is config for nginx.
+The following is my config for nginx.
 
 	#include <tunables/global>
 
@@ -55,7 +55,7 @@ The following is config for nginx.
 		/var/log/nginx/* w,
 	}
 
-The following is config for php-fpm.
+The following is my config for php-fpm.
 
 	#include <tunables/global>
 
