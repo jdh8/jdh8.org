@@ -14,7 +14,7 @@ inline double _Complex CMPLX(double x, double y)
 }
 ```
 
-Actually, it is not.  Whether `I` is complex or imaginary, `I * y` evaluates to
+It is not.  Whether `I` is complex or imaginary, `I * y` evaluates to
 (+0, <var>y</var>) when added with a real number.  If <var>x</var> happens to
 be -0, its sign is not preserved because -0 + +0 = +0.
 
