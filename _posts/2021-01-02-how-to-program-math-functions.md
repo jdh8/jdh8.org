@@ -160,15 +160,15 @@ the halves can have opposite signs recovers the seemingly lost bit.
 ### Table maker's dilemma
 The cost of a correctly rounded transcendental function is unknown
 unless probed with brute force.  Faithfully rounded versions are much
-faster and generally preferable, though they may round the mathematical
-value up or down.  No matter how precise intermediate results are, they
-can be close to a turning point of the given rounding.  For example,
-<var>x</var> is a mathematical result equal to <var>x</var><sup>\*</sup>
-\+ 0.49 ulp, where <var>x</var><sup>\*</sup> is an exact floating-point.
-An exquisite approximation gives <var>x</var><sup>\*</sup> + 0.51 ulp,
-which is only 0.02 ulp off.  Nevertheless, it becomes
-<var>x</var><sup>\*</sup> + 1 ulp after default rounding, which is 1 ulp
-off from the correctly rounded <var>x</var><sup>\*</sup>.
+faster and generally preferable, though they may round up or down.  No
+matter how precise intermediate results are, they can be close to a
+turning point of the given rounding.  For example, <var>x</var> is a
+mathematical result equal to <var>x</var><sup>\*</sup> + 0.49 ulp, where
+<var>x</var><sup>\*</sup> is an exact floating-point.  An exquisite
+approximation gives <var>x</var><sup>\*</sup> + 0.51 ulp, which is only
+0.02 ulp off.  Nevertheless, it becomes <var>x</var><sup> \*</sup> + 1
+ulp after default rounding, which is 1 ulp off from the correctly
+rounded <var>x</var><sup>\*</sup>.
 
 We can correctly round an algebraic function by solving its polynomial
 equation at the turning point and compare the results.  However, this
@@ -186,14 +186,12 @@ libraries.
 Approximation
 -------------
 Eventually, we break down mathematical functions to basic arithmetics.
-This section covers how to reduce, transform, and approximate functions
-to common arithmetic operations.
+This section covers how to turn mathematics into source code.
 
 ### Argument reduction
-Sometimes we can reduce the domain to approximate to a short interval
-with a mathematical identity.  For example, to compute `exp` for a
-binary floating-point format, we can divide its argument <var>x</var> by
-ln 2.
+Sometimes we can shrink the domain to a short interval with an identity.
+For example, to compute `exp` for a binary format, we can divide its
+argument <var>x</var> by ln 2.
 
 <p>
 	\begin{align*}
@@ -202,26 +200,25 @@ ln 2.
 	\end{align*}
 </p>
 
-Where <var>n</var> is an integer, multiplication by 2<sup><var>n</var></sup>
-can be computed with bit twiddling.  If we pick <var>n</var> as an
-integer nearest to <var>x</var>, we simultaneously restrict <var>r</var>
-into [-0.5 ln 2, 0.5 ln 2].
+Where <var>n</var> is an integer, bit twiddling takes care of
+multiplication by 2<sup><var>n</var></sup>.  If we pick <var>n</var> as
+an integer nearest to <var>x</var>, we simultaneously restrict <var>
+r</var> into [-0.5 ln 2, 0.5 ln 2].
 
 Approximation to exp <var>r</var> is fast because [-0.5 ln 2, 0.5 ln 2]
-is a short interval.  The target function can be approximated with few
-terms to achieve the desired precision.
+is a short interval.  We approximate exp <var>r</var> with few terms to
+achieve the desired precision.
 
 It is also precise because <var>r</var> is small.  Computations
-involving small numbers are precise.  Floating-points are dense near the
-origin since they are essentially scientific notation.  In IEEE 754
+involving small numbers are accurate.  Floating-points are dense near
+the origin since they are essentially scientific notation.  In IEEE 754
 binary formats, there is the same number of representations in (0, 1.5)
 and in (1.5, ∞).  Therefore, it is wise to shift the domain close to 0.
 
 ### Transformations
-Most mathematical functions we compute have some nice property such as
-continuity, differentiability, or symmetry.  Taking advantage of these
-properties allows omitting terms in the approximant and hence saving
-computations.
+Most mathematical functions we compute are well-behaved.  We can save
+computations by taking advantage of continuity, differentiability, or
+symmetry.
 
 When a function <var>f</var> **passes through and is monotone at the
 origin**, divide it by the identity function and approximate the
@@ -234,9 +231,9 @@ quotient <var>g</var> instead.
 	\end{align*}
 </p>
 
-This explicitly omits the constant term and shrinks the overall relative
-error.  The value of <var>g</var>(0) can be any finite number.  We define
-<var>g</var> as a continuous extension for rigor.
+This transformation explicitly omits the constant term and reduces the
+overall relative error.  The value of <var>g</var>(0) can be any finite
+number.  We define <var>g</var> as a continuous extension for rigor.
 
 <p>
 	\[
@@ -249,11 +246,11 @@ error.  The value of <var>g</var>(0) can be any finite number.  We define
 
 Given an approximant <var>ĝ</var> of <var>g</var>, the overall
 absolute error <var>x</var> |<var>ĝ</var> &minus; <var>g</var>|
-tends to 0 when <var>x</var> also approaches 0.  This enables
-approximating <var>g</var> without a weight function and simplifies
-calculation.
+tends to 0 when <var>x</var> also approaches 0.  This transformation
+enables approximating <var>g</var> without a weight function and
+simplifies calculation.
 
-When <var>f</var> is an **even function**, take it as another function
+When <var>f</var> is an **even function**, view it as another function
 <var>g</var> of a squared variable.
 
 <p>
@@ -264,8 +261,8 @@ When <var>f</var> is an **even function**, take it as another function
 	\end{align*}
 </p>
 
-This explicitly omits odd terms and halves the degree of the
-approximant.
+This transformation explicitly omits odd terms and halves the degree of
+the approximant.
 
 An **odd function** is a combination of the above two.  It is a product
 of the identity function and an even function.
@@ -278,17 +275,18 @@ of the identity function and an even function.
 	\end{align*}
 </p>
 
-The value of <var>g</var>(0) does not affect approximation of
-<var>g</var> as it creates no hole on the domain.  In practice, set the
+The value of <var>g</var>(0) does not affect the approximation of
+<var>g</var> as it creates no hole in the domain.  In practice, set the
 lower bound to a tiny positive number like 2<sup>-200</sup>, and
 everything is fine.
 
 ### Remez algorithm
-Remez exchange algorithm is an interative minimax that minimizes error
-of a rational approximation of a function.  The best explanation of this
-algorithm I found is [from the Boost libraries][boost].  I recommend
-[Remez.jl][remez.jl], a public module in the Julia language.  It works
-out of the box after installation.
+Remez exchange algorithm is an iterative minimax algorithm.  It
+minimizes the error of a rational approximation of a function.  The best
+explanation of this algorithm I found is
+[from the Boost libraries][boost].  I recommend [Remez.jl][remez.jl], a
+public module in the Julia language.  It works out of the box after
+installation.
 
 [boost]: https://www.boost.org/doc/libs/1_75_0/libs/math/doc/html/math_toolkit/remez.html
 [remez.jl]: https://github.com/simonbyrne/Remez.jl
@@ -296,7 +294,7 @@ out of the box after installation.
 For example, the following snippet finds a cubic approximation of
 cos(√&middot;) in [0, (π / 4)<sup>2</sup>] with minimax absolute errors.
 The last argument is 0 because we want a polynomial, whose denominator
-is constant (of degree 0) if regarded as a rational function.
+is a constant (of degree 0) if regarded as a rational function.
 
 ```jl
 import Remez
@@ -304,11 +302,10 @@ import Remez
 N, D, E, X = Remez.ratfn_minimax(x -> cos(√x), (0, (big(π) / 4)^2), 3, 0)
 ```
 
-The variables `N`, `D`, `E`, `X` are filled respectively with the
-numerator, the denominator, the maximum error, and coordinates of the
-extrema of the error.  In this case, we are interested in `N` and `E`
-only.  If the snippet is run in the REPL, it is straightforward to
-inspect variables.
+The variables `N`, `D`, `E`, `X` are the numerator, the denominator, the
+maximum error, and coordinates of the extrema, respectively.  In this
+case, we are interested in `N` and `E` only.  If we run the snippet in
+the REPL, it is straightforward to inspect variables.
 
 ```
 julia> N
@@ -327,24 +324,23 @@ first element of `N` is the constant term.
 
 ### Polynomial evaluation
 The best polynomial evaluation method depends on the system.  For
-example, [pipelining greatly influences execution time][pipe].  Luckily,
-there are well-known evaluation schemes that provide decent performance
-and reasonable errors.
+example, [pipelining influences execution time][pipe].  Luckily, there
+are well-known evaluation schemes that provide decent performance and
+reasonable errors.
 
 [pipe]: http://lolengine.net/blog/2011/9/17/playing-with-the-cpu-pipeline
 
-**Horner's scheme** produces the fewest operations.  It is clearly the
-fastest if its argument is already parallelized, such as a vector or a
-tensor.  It is also usually the most accurate method for a polynomial
-approximant of a well-conditioned function.  However, its dependency
-chain is also the longest.  It makes poor use of the pipeline because
-all operations except one depend on another.  Hence, it is less
-than ideal on single-threaded systems.
+**Horner's scheme** produces the fewest operations.  It is the fastest
+if its argument is already a vector.  It is also usually the most
+accurate method for a polynomial approximant of a well-conditioned
+function.  However, its dependency chain is also the longest.  It
+underuses the pipeline because all operations except one depend on
+another.  Hence, it is less than ideal on single-threaded systems.
 
 On the other hand, **Estrin's scheme** tries to be as parallel as
 possible.  It groups terms in a binary fashion to achieve the shallowest
-dependency tree in expense of O(log(<var>n</var>)) extra squarings.
+dependency tree at the expense of O(log(<var>n</var>)) extra squaring
+ops.
 
 There are also other evaluation schemes with different pros and cons.
-If this is critical for your work, benchmark to find the most suited
-one.
+Benchmark to find the most suited one if their difference is critical.
