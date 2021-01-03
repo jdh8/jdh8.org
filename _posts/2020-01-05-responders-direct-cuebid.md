@@ -33,6 +33,9 @@ better describe game-forcing hands without 3-card support.
 
 After a minor opening
 ---------------------
+We make the cuebid a versatile tool to **combine** the advantages of
+popular treatments.
+
 According to the previous section, you can have an embarrassing strong
 hand with no 4-card support, no biddable side suit, and no stopper in
 the adverse suit.  Imagine holding the following hand at 1♣-(1♠)-?
@@ -49,6 +52,3 @@ playable if your partner has a spade stopper.  Ask for one with 2♠.
 Besides, we can keep the limit raise.  Your partner is eager to show a
 stopper as notrump games score more than minor games.  Including the
 limit raise in the cuebid does not affect the bidding structure.
-
-To sum up, we make the cuebid a versatile tool to combine the advantages
-of popular treatments.
