@@ -6,22 +6,23 @@ tags: Convention Bidding
 ---
 <link rel="stylesheet" href="/style/bridge.css">
 
-I have been researching on [Wbridge5][wbr5], a prominent bridge program.  I was
-confused that it disables [inverted minors][invm] by default.  Recently I came
-up with conclusion.
+I have been researching on [Wbridge5][wbr5], a prominent bridge program.
+I used to be confused that it disables [inverted minors][invm] by
+default.  Recently I came up with a conclusion.
 
-> By default, Wbridge5 opens **strong notrump**, so inverted minors is
-> disabled.  Wbridge5 includes inverted minors because *weak notrump* is also
-> available.
+> Wbridge5 opens **strong notrump** by default, so this treatment is
+> disabled.  Wbridge5 still includes inverted minors because *weak
+> notrump* is a choice.
 
-Inverted minors originates from [Kaplan–Sheinwold][ks].  Inverted minors is
-popular in East and Southeast Asia due to popularity of [Precision Club][prec],
-based on K-S with [strong club][club], inheriting the weak notrump opening.
+Inverted minors originated from [Kaplan--Sheinwold][ks].  It is
+popular in East and Southeast Asia because of [Precision
+Club][prec], a bidding system based on K-S with the [strong club][club]
+that inherits the weak notrump opening.
 
-Nowadays, many ones open strong notrump according to [*somewhat American*][am].
-However, some of them still employ inverted minors.  Inverted minors has pros
-indeed, easily found by searching ["inverted minors"][duck].  Hence, I list
-its cons as balance.
+Nowadays, many players open strong notrump according to [*something
+American*][am].  However, some of them still employ inverted minors.  It
+has pros easily found by searching "[inverted minors][duck]."  Hence, I
+list its cons as a balance report.
 
 [am]:   https://en.wikipedia.org/wiki/Standard_American
 [club]: https://en.wikipedia.org/wiki/Strong_club_system
@@ -33,36 +34,35 @@ its cons as balance.
 
 *Garbage* 1NT response
 ----------------------
-Weakness of inverted minors is not on itself but the 1NT response modified
-because of inverted minors.  The 1NT response may have the following meanings:
+The weakness of inverted minors is not on itself but the 1NT response
+adjusted by the inverted minors.  The 1NT response shows either of the
+following:
 
 Constructive 1NT
-: At least 6 tricks expected if both minimum.
+: Expected 6+ tricks if both minimum.
 
 *Garbage* 1NT
-: Only 5 tricks expected if both minimum.
+: Expected only 5 tricks if both minimum.
 
-When partner opens 1♠, 1<span class="redsuit">♥</span>, or
-1<span class="redsuit">♦</span>, not to miss a probable game, garbage 1NT is
-*on* as the opponent passes.
+When the partner opens 1♠, 1<span class="redsuit">♥</span>, or
+1<span class="redsuit">♦</span>, not to miss a probable game, the
+garbage 1NT is *on*.  <small>Overcalls invalidate inverted minors, so
+their counteractions fall out of the topic.</small>
 
-If inverted minors is agreed, without intervention, garbage 1NT is always on.
-
-If inverted minors is *off*, a constructive 1NT is ensured over 1♣ opening even
-if intervened, as there is always a better call <small>i.e. a suit or
-pass</small>.  Respond 2♣ with a weak 3-3-3-4 because the opener often has 4+
-clubs.
+_Without_ inverted minors, a 1NT response to 1♣ is always constructive.
+Respond 2♣ with a weak 3-3-3-4 because the opener often has 4+ clubs.
 
 If 1♣ ensures 3+ clubs
-: With minimum strength, the probability of only 3 clubs is 21.5%.
+: With minimum strength, the probability of mere 3 clubs is 21.5%.
 
 If 1♣ can be 4-4-3-2
-: With minimum strength, the probability of exactly 3 clubs is 20.4%, 4-4-3-2 5.19%.
+: With minimum strength, the probability of mere 3 clubs is 20.4%, 4-4-3-2 5.19%.
 
 ### Weak 4-card support dumped as garbage ###
-Express 5-card support at 3 level preempts, but 1NT with 4-card support is much
-less preemptive.  Is there so much difference between 2 of a minor and 1NT, as
-1NT is just one or two bids lower?  Let's consider the following.
+Express 5-card support as 3 level preempts.  Nevertheless, 1NT with weak
+4-card support is much less preemptive.  Is there so much difference
+between 2 of a minor and 1NT, as 1NT is just one or two bids lower?
+Let's consider the following.
 
 |   W   |  N  |     E     |  S  |
 |-------|-----|-----------|-----|
@@ -72,12 +72,12 @@ less preemptive.  Is there so much difference between 2 of a minor and 1NT, as
 [^1]: [Takeout double](https://en.wikipedia.org/wiki/Takeout_double)
 [^2]: Convert to business double
 
-The point is not whether to escape, but the positive pass.  Notrump sucks for
-the declarer, 6.06 tricks taken on average.  1NTxS−3 is more tragic than 3NTE=
-unless favorable vulnerability.  In addition, the total notrump tricks may be
-less than 13.
+The point is not whether to escape, but the positive pass.  Notrump is
+awful for the declarer, with 6.06 tricks taken on average.
+1NTxS&minus;3 is more tragic than 3NTE= without favorable vulnerability.
+Besides, the total notrump tricks may be less than 13.
 
-If 2♣ were responded, east must have had clubs to pass, positive advances
-elevated onto 2NT.  *Preemption is force opponents bid high with strong hands.*
-Although 2♣ is only one bid higher than 1NT, pass and cuebid are pushed onto
-2NT.
+If we responded 2♣ instead, east must have clubs to pass, and the lowest
+positive advance becomes 2NT.  *Preemption is force opponents to bid
+strong hands high.* Although 2♣ is only one bid higher than 1NT, it
+pushes pass and cuebid onto 2NT.
