@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/genericons.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/highlight.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/social.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/style/bridge.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/screen/44.375.css" media="screen and (min-width: 44.375em)">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/screen/56.875.css" media="screen and (min-width: 56.875em)">
 	<link rel="stylesheet" href="{{ site.baseurl }}/style/screen/61.5625.css" media="screen and (min-width: 61.5625em)">
@@ -38,7 +39,7 @@
 		<label class="toggle" for="ballot">Menu</label>
 		{% include navigation.liquid %}
 	</header>
-	<main>{{ content }}</main>
+	<main>{{ content | replace: '♥', '<span class="redsuit">♥</span>' | replace: '♦', '<span class="redsuit">♦</span>' }}</main>
 	<aside>
 		<section>
 			<h2>Categories</h2>

@@ -1,5 +1,5 @@
 ---
-layout: cc
+layout: page
 title: General understandings
 ---
 Wbridge5 is a closed-source program, so some mechanisms are still unknown.

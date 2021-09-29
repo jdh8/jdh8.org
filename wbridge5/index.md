@@ -1,5 +1,5 @@
 ---
-layout: cc
+layout: page
 title: Wbridge5
 ---
 [Wbridge5][wbr5] is a prominent bridge program.  Wbridge5 has been [world

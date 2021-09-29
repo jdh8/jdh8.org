@@ -4,8 +4,6 @@ title: Responder's direct cuebid
 categories: Bridge
 tags: Bidding
 ---
-<link rel="stylesheet" href="/style/bridge.css">
-
 Responder's direct cuebid is a disputed and under-discussed topic.
 There are two popular usages of this bid:
 
@@ -41,8 +39,8 @@ hand with no 4-card support, no biddable side suit, and no stopper in
 the adverse suit.  Imagine holding the following hand at 1♣-(1♠)-?
 
 ♠ xxx  
-<span class="redsuit">♥</span> Axx  
-<span class="redsuit">♦</span> Axxx  
+♥ Axx  
+♦ Axxx  
 ♣ Axx
 
 You could have bid 3NT if RHO did not overcall, but you cannot now because
