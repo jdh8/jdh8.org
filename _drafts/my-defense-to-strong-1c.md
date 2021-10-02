@@ -31,9 +31,8 @@ playing an undoubled misfit like psychic bids.
 Paradox advances
 ================
 [The paradox principle][paradox] is more than pass or correct.  It is to
-consider what to respond to each option and make the cheapest call.  In the
-following examples, the LHO opened strong 1♣, our partner overcalled, and the
-RHO passed.  We hold
+consider what to respond to each option and make the cheapest call.  For
+example, hearing 1♣-(2♦)-pass, we hold
 
 ♠ J98  
 ♥ KJ1032  
@@ -42,52 +41,14 @@ RHO passed.  We hold
 
 [paradox]: 2020-01-05-responders-direct-cuebid.md
 
-### 1♣-(1NT)-(?)
-
-| Option        | Advance |
-|---------------|---------|
-| Pointed suits | 2♦      |
-| Rounded suits | 4♥      |
-
-Bid 2♦.  If our partner later switches to hearts or clubs, raise to 4♥.
-
-### 1♣-(2♣)-(?)
-
-| Option    | Advance |
-|-----------|---------|
-| Clubs     | pass    |
-| Red suits | 4♥      |
-
-Pass.  It is much more likely that our partner has clubs.
-
-### 1♣-(2♦)-(?)
-
 | Option   | Advance |
 |----------|---------|
 | Diamonds | 3♦      |
 | Majors   | 4♥      |
 
-Bid 3♦.  This bid also conveys that we are also willing to raise either major.
-2♥ is an underbid that carries too little information and takes away too little
-space.
-
-### 1♣-(2♥)-(?)
-
-| Option      | Advance |
-|-------------|---------|
-| Hearts      | 4♥      |
-| Black suits | 2♠      |
-
-Bid 2♠ to show heart support and preference to spades.
-
-### 1♣-(2♠)-(?)
-
-| Option | Advance |
-|--------|---------|
-| Spades | 3♠      |
-| Minors | 3♦      |
-
-Bid 3♦ to show spade support and preference to diamonds.
+Bid 3♦.  Besides diamond support, this bid also shows that we can also raise
+either major.  Underbidding 2♥ conveys too little information and takes away
+too little space.
 
 Comparison with defenses to 1NT
 ===============================
