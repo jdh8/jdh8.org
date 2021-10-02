@@ -30,9 +30,8 @@ playing an undoubled misfit like psychic bids.
 
 Paradox advances
 ================
-[The paradox principle][paradox] is more than pass or correct.  It is to
-consider what to respond to each option and make the cheapest call.  For
-example, hearing 1♣-(2♦)-pass, we hold
+[The paradox principle][paradox] in a pass-or-correct system is to bypass
+underbids.  For example, hearing 1♣-(2♦)-pass, we hold
 
 ♠ J98  
 ♥ KJ1032  
@@ -49,6 +48,10 @@ example, hearing 1♣-(2♦)-pass, we hold
 Bid 3♦.  Besides diamond support, this bid also shows that we can also raise
 either major.  Underbidding 2♥ conveys too little information and takes away
 too little space.
+
+The paradox lies in that we do not bid our favorite strain.  We have to make
+the cheapest call of the conjectured advances.  Resultantly, we usually bid for
+the worst case.
 
 Comparison with defenses to 1NT
 ===============================
