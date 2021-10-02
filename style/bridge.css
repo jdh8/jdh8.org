@@ -1,3 +1,12 @@
 .redsuit {
 	color: #d33;
 }
+
+table.convention {
+	border: none;
+	width: auto;
+}
+
+.convention td {
+	border: none;
+}
