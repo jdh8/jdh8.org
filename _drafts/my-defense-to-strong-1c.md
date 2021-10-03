@@ -23,9 +23,9 @@ flexible that it also applies to strong 1♦ and over the forced responder, e.g.
 {:.convention}
 
 Psycho Suction is an extension to the natural defense.  It is a superset of the
-weak 2s.  The two-suiters increase the probabilities of the 2-bids and unanchor
-them.  Psycho Suction establishes a pass-or-correct system where the 2x
-overcalls are also pass-or-correct.  The word "psycho" reflects the risk of
+weak twos.  The two suiters increase the probabilities of the 2-bids and
+unanchor them.  Psycho Suction establishes a pass-or-correct system where the
+2x overcalls are also pass-or-correct.  The word "psycho" reflects the risk of
 playing an undoubled misfit like psychic bids.
 
 Paradox advances
@@ -89,9 +89,69 @@ overcalls, which take considerable space.
 Another difference is that 1NT is limited and descriptive.  The opener does not
 have much to say even if given a second chance to bid.  The probability that
 the opener has a major is also lower.  These reasons make major-oriented
-overcalls effective, e.g. Multi-Landy.
+overcalls effective, e.g. [Multi-Landy][multi-landy].
 
 On the other hand, a strong artificial opening is usually unlimited.  Forcing
-overcalls are less effective because they let the opener pass at ease.  Thus, a
+overcalls are less effective since they let the opener pass at ease.  Thus, a
 natural defense to 1♣ is stronger than to 1NT.  Besides, Inverted Psycho
 Suction may work for 1NT, but Psycho Suction works better for 1♣.
+
+[multi-landy]: https://www.bridgebum.com/multi_landy.php
+
+Discussions
+===========
+### 5=4 two suiters
+I include some 5=4 two suiters to increase the probabilities of Psycho Suction
+bids.  The rest can be easily expressed with a simple major overcall, where the
+4-card suit is lower than the 5-card major.
+
+| 1♥  | 5+ hearts
+| 1♠  | 5+ spades
+| 1NT | 4+ spades 5+ diamonds or 4+ hearts 5+ clubs
+| 2♣  | 6+ clubs or 4+ hearts 5+ diamonds
+| 2♦  | 6+ diamonds or 4+ spades 5+ hearts
+| 2♥  | 6+ hearts or 4+ spades 5+ clubs
+| 2♠  | 6+ spades or 5+ diamonds 4+ clubs
+| 2NT | 4+ diamonds 5+ clubs
+{:.convention}
+
+I believe 5=4 is the sweet spot of two suiters.  The original 5-5 is too
+infrequent to make these overcalls different from weak twos.  The 5-4 pattern
+is as frequent as the single-suited, putting the pass at higher risk.  Moreover,
+5-4 bids are better guided with an extra step showing equal preference.  For
+example, [Landy][landy] shows 5-4 in majors, and the 2♦ advance indicates equal
+preference.  Nevertheless, this additional step bears a suit we deny, so it
+lets opponents come in cheaply.
+
+[landy]: https://en.wikipedia.org/wiki/Landy_convention
+
+### Strength of X and 1♦
+The strength to double is opening values.  The double is a two-way call that is
+either a takeout double or a stolen opening bid with 5+ cards.
+
+The 1♦ overcall is slightly stronger than 1♥ and 1♠ because it gives space yet
+exhibits no major.  I suggest near average strength, i.e. 10+ total points in
+which there are 8+ HCP.  I even recommend this approach to natural 1♣ since 1♦
+leaks information without taking space.
+
+### Pass or X with 16+ HCP
+Congratulations on holding yet another strong club!  A comeback after passing
+the first round definitely reveals 16+ HCP.  There are also situations where an
+initial double is better.  To decide the better overcall, we have to
+investigate pros and cons between pass and X.
+
+The pass is better when coming back is easy.  The following qualities suggest a
+pass.
+
+- Single suiter
+- 5-card major
+- Balanced, 16-18 HCP
+
+The takeout double is made for three suiters.  It lets our partner decide the
+strain.  It also silences opponents and makes our way to a very strong notrump
+with 19+ HCP.
+
+Two suiters fall between these scenarios.  I have not come up with a sound
+strategy yet.  The big picture is to double with equal length.  Quasi-natural
+comeback auctions express preferences.  We still need to further discuss on
+continuations after the takeout.
