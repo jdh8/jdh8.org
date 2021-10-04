@@ -155,3 +155,6 @@ Two suiters fall between these scenarios.  I have not come up with a sound
 strategy yet.  The big picture is to double with equal length.  Quasi-natural
 comeback auctions express preferences.  We still need to further discuss on
 continuations after the takeout.
+
+* * *
+{% comment %} Generated footnotes {% endcomment %}
