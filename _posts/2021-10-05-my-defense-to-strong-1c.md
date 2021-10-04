@@ -134,27 +134,39 @@ exhibits no major.  I suggest near average strength, i.e. 10+ total points in
 which there are 8+ HCP.  I even recommend this approach to natural 1♣ since 1♦
 leaks information without taking space.
 
-### Pass or X with 16+ HCP
+### Overcalls with 16+ HCP
 Congratulations on holding yet another strong club!  A comeback after passing
 the first round definitely reveals 16+ HCP.  There are also situations where an
-initial double is better.  To decide the better overcall, we have to
-investigate pros and cons between pass and X.
+initial double is better.  To decide the best overcall, we have to investigate
+their pros and cons.
 
 The pass is better when coming back is easy.  The following qualities suggest a
 pass.
 
 - Single suiter
 - 5-card major
-- Balanced, 16-18 HCP
+- Balanced
 
 The takeout double is made for three suiters.  It lets our partner decide the
-strain.  It also silences opponents and makes our way to a very strong notrump
-with 19+ HCP.
+strain.  If our partner bids our shortness, we can bid 1NT to provide choices
+again.
 
-Two suiters fall between these scenarios.  I have not come up with a sound
-strategy yet.  The big picture is to double with equal length.  Quasi-natural
-comeback auctions express preferences.  We still need to further discuss on
-continuations after the takeout.
+Two suiters fall between these scenarios.  First, try to bid 1NT and 2NT since
+they are forcing.  Next, hide a 4-card minor with a pass because introducing
+the longest suit is often enough.  Then, we are left with the following two
+suiters to double.
+
+- Majors
+- 4=5 or more in same-colored suits
+
+When a fit is not found yet, we can easily run to the cheaper suit.  This
+strategy happens to spare 2♣, our rebid to show a regular opener with clubs.
+
+| Advance | Majors | Black | Red |
+|:-------:|:------:|:-----:|:---:|
+| **1♦**  |   1♥   |  1♠   |     |
+| **1♥**  |        |  1♠   |     |
+| **1♠**  |        |       | 2♦  |
 
 * * *
 {% comment %} Generated footnotes {% endcomment %}
