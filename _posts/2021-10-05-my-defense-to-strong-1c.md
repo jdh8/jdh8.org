@@ -7,7 +7,7 @@ tags: Bidding
 My favorite defense to strong 1♣ is [Psycho Suction][psycho].  I filled in 2NT
 and the 1-level as per the [useful space principle][usp].  This defense is so
 flexible that it also applies to strong 1♦ and over the forced responder, e.g.
-1♣-1♦-(?).
+(1♣)-(1♦).
 
 [psycho]: https://bridge.thomasoandrews.com/psycho.html
 [usp]: https://en.wikipedia.org/wiki/Useful_space_principle
@@ -31,7 +31,7 @@ playing an undoubled misfit like psychic bids.
 Paradox advances
 ================
 [The paradox principle][paradox] in a pass-or-correct system is to bypass
-underbids.  For example, hearing 1♣-(2♦)-pass, we hold
+underbids.  For example, hearing (1♣)-2♦, we hold
 
 ♠ J98  
 ♥ KJ1032  
