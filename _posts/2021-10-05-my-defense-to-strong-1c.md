@@ -6,8 +6,8 @@ tags: Bidding
 ---
 My favorite defense to strong 1♣ is [Psycho Suction][psycho].  I filled in 2NT
 and the 1-level as per the [useful space principle][usp].  This defense is so
-flexible that it also applies to strong 1♦ and over the forced responder, e.g.
-(1♣)-(1♦).
+flexible that it also applies to small 1♣, strong 1♦, and over the forced
+responder, e.g.  (1♣)-(1♦).
 
 [psycho]: https://bridge.thomasoandrews.com/psycho.html
 [usp]: https://en.wikipedia.org/wiki/Useful_space_principle
