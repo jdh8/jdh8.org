@@ -15,60 +15,57 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"use strict";
+const concat = (array, right) =>
 {
-	function concat(array, right)
-	{
-		const left = array[array.length - 1];
+	const left = array[array.length - 1];
 
-		if (left && left.type === "VariableDeclaration" && right.type === "VariableDeclaration")
-			left.declarations = left.declarations.concat(right.declarations);
-		else
-			array.push(right);
+	if (left && left.type === "VariableDeclaration" && right.type === "VariableDeclaration")
+		left.declarations = left.declarations.concat(right.declarations);
+	else
+		array.push(right);
 
-		return array;
-	}
-
-	/**
-	 * The argument is modified in place to avoid deep copy.
-	 *
-	 * @summary Concatenate adjacent variable declarations
-	 *
-	 * @param {Object} ast - Abstract syntax tree
-	 *
-	 * @returns  Modified {@link ast}
-	 */
-	function transform(ast)
-	{
-		const result = ast.body;
-
-		result.body = result.body.reduce(concat, []);
-		result.body.filter(s => s.type === "FunctionDeclaration").forEach(transform);
-
-		return result;
-	}
-
-	const reader = new FileReader();
-	const code = document.getElementById("minified-asm");
-
-	reader.addEventListener("loadend", function()
-	{
-		code.textContent = escodegen.generate(transform({ body: esmangle.mangle(esprima.parse(this.result)) }),
-		{
-			format:
-			{
-				renumber: false,
-				escapeless: true,
-				compact: true,
-				semicolons: false,
-				quotes: "double",
-			},
-			parse: esprima.parse,
-		});
-	});
-
-	document.getElementById("asm-file").addEventListener("change", function()
-	{
-		reader.readAsText(this.files[0]);
-	});
+	return array;
 }
+
+/**
+ * The argument is modified in place to avoid deep copy.
+ *
+ * @summary Concatenate adjacent variable declarations
+ *
+ * @param {Object} ast - Abstract syntax tree
+ *
+ * @returns  Modified {@link ast}
+ */
+const transform = ast =>
+{
+	const result = ast.body;
+
+	result.body = result.body.reduce(concat, []);
+	result.body.filter(s => s.type === "FunctionDeclaration").forEach(transform);
+
+	return result;
+}
+
+const reader = new FileReader();
+const code = document.getElementById("minified-asm");
+
+reader.addEventListener("loadend", function()
+{
+	code.textContent = escodegen.generate(transform({ body: esmangle.mangle(esprima.parse(this.result)) }),
+	{
+		format:
+		{
+			renumber: false,
+			escapeless: true,
+			compact: true,
+			semicolons: false,
+			quotes: "double",
+		},
+		parse: esprima.parse,
+	});
+});
+
+document.getElementById("asm-file").addEventListener("change", function()
+{
+	reader.readAsText(this.files[0]);
+});
