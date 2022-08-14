@@ -111,8 +111,8 @@ bids.  The rest can be easily expressed with a simple major overcall, where the
 | 2♣  | 6+ clubs or 4+ hearts 5+ diamonds
 | 2♦  | 6+ diamonds or 4+ spades 5+ hearts
 | 2♥  | 6+ hearts or 4+ spades 5+ clubs
-| 2♠  | 6+ spades or 5+ diamonds 4+ clubs
-| 2NT | 4+ diamonds 5+ clubs
+| 2♠  | 6+ spades or 4+ diamonds 5+ clubs
+| 2NT | 5+ diamonds 4+ clubs
 {:.convention}
 
 I believe 5=4 is the sweet spot of two suiters.  The original 5-5 is too
