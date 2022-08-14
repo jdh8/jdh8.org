@@ -4,8 +4,6 @@ title: Inverted minors considered harmful with strong notrump
 categories: Bridge
 tags: Convention Bidding
 ---
-<link rel="stylesheet" href="/style/bridge.css">
-
 I have been researching on [Wbridge5][wbr5], a prominent bridge program.
 I used to be confused that it disables [inverted minors][invm] by
 default.  Recently I came up with a conclusion.
@@ -44,8 +42,7 @@ Constructive 1NT
 *Garbage* 1NT
 : Expected only 5 tricks if both minimum.
 
-When the partner opens 1♠, 1<span class="redsuit">♥</span>, or
-1<span class="redsuit">♦</span>, not to miss a probable game, the
+When the partner opens 1♠, 1♥, or 1♦, not to miss a probable game, the
 garbage 1NT is *on*.  <small>Overcalls invalidate inverted minors, so
 their counteractions fall out of the topic.</small>
 
