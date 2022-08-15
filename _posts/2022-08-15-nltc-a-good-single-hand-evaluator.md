@@ -2,7 +2,7 @@
 layout: post
 title: NLTC, a good single hand evaluator
 categories: Bridge
-tags: Bidding
+tags: ["Hand evaluation", Bidding]
 ---
 Inspired by [Thomas Andrews' article on single hand evaluators][singeval],
 I want to check out how good such an evaluator NLTC is.  Since LTCs need an
@@ -62,3 +62,24 @@ doubleton in another are both counted as values a priori.
           |          |          |          | 1        | 0.974347
           |          |          |          |          | 1
 {:.monospace}
+
+Using NLTC in bidding
+---------------------
+NLTC is more a single hand evaluator than an additive one.  It is good to use
+NLTC for suit-oriented initial actions like preemptive openings and overcalls.
+Consider using additive point counts to assess supports.
+
+The exact ranges of NLTC for preemptive openings are up to partnership
+agreement.  I'd still like to point out some problems if you try to migrate
+from LTC to NLTC.
+
+### Don't directly apply the rule of 2, 3, 4
+
+With the plain LTC, we estimate the minimum playing tricks to be 13 &minus;
+LTC.  However, NLTC counts more losers than LTC, especially in single suiters.
+NLTC counts x and xx as 1.5 and 2.5 losers respectively, i.e. each 0.5 more
+than LTC.  Single suiters are rich in singletons and doubletons.  Besides, it
+is discouraged to preempt with a void.  In general, NLTC intrinsically counts
+1--1.5 more losers than LTC for single suiters.  I am still not sure how to map
+NLTC to preemptive bids.  There is going to be an update if I finally figure it
+out.
