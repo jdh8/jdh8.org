@@ -2,7 +2,7 @@
 layout: post
 title: My defense to strong 1♣
 categories: Bridge
-tags: Bidding
+tags: Bidding Convention
 ---
 My favorite defense to strong 1♣ is [Psycho Suction][psycho].  I filled in 2NT
 and the 1-level as per the [useful space principle][usp].  This defense is so
