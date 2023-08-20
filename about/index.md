@@ -32,7 +32,8 @@ of [matrix functions][MatF] and [Kronecker product][KroneckerProd].
 
 About this site
 ---------------
-This site is primarily about mathematics and computer science.
+This site is primarily about computer science and contract bridge.  I also play
+Japanese mahjong, but I am not good enough to write about it.
 
 [GitHub Pages][GHP] uses [Jekyll][Jekyll], enabling me to write modularized
 stylesheets in [Sass][Sass].

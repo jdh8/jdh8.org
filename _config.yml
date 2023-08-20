@@ -1,8 +1,8 @@
 plugins:
   - jekyll-paginate
 
-title: Integration by me
-description: Then you will know the truth, and the truth will set you free.
+title: Taipei Forcing Club
+description: Science and games with Chen-Pang He, mainly computer science and contract bridge
 paginate: 10
 paginate_path: /page/:num/
 permalink: /:title/

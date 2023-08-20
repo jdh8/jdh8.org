@@ -1,11 +1,11 @@
 ---
 layout: post
-title: New icon
+title: Rebranding with a new icon
 ---
 ![New icon]({{ site.baseurl }}/assets/Taipei-Forcing-Club-path.svg)
 
-I made a new icon for the [Taipei Forcing Club][tfc].  This icon honors both my
-hobbies: contract bridge and Japanese mahjong.
+I made a new icon for the [Taipei Forcing Club][tfc] and this site.  This icon
+honors both my hobbies: contract bridge and Japanese mahjong.
 
 [tfc]: https://goo.gl/maps/uUpX5tMgy15L7DVw9
 
