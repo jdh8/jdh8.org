@@ -2,18 +2,8 @@
 layout: page
 title: About
 ---
-<link rel="stylesheet" href="style.css">
-
 About me
 --------
-<div id="avatar">
-<a href="https://www.gravatar.com/avatar/a28b050d0206b3d418551203ddd83cba?s=800">
-<img alt="Chen-Pang He" width="200" height="200"
-	src="https://www.gravatar.com/avatar/a28b050d0206b3d418551203ddd83cba?s=200"
-	srcset="https://www.gravatar.com/avatar/a28b050d0206b3d418551203ddd83cba?s=400 2x">
-</a>
-</div>
-
 I am [**Chen-Pang He**][SearchEn] ([**何震邦**][SearchZh]), M.D.,
 [Taipei Medical University][TMU].
 
@@ -27,11 +17,6 @@ of [matrix functions][MatF] and [Kronecker product][KroneckerProd].
 * [Wikipedia](https://en.wikipedia.org/wiki/User:Jdh8)
 * [Stack Overflow](http://stackoverflow.com/users/2099989/jdh8)
 * [Facebook](https://www.facebook.com/jdh863)
-
-<small>
-\[The nimation of my avatar is from [Lea Verou][Lea].  Hers is dynamic,
-mine hardcoded.\]
-</small>
 
 [CK]: https://web.ck.tp.edu.tw/
 [Cxx]: https://zh.wikipedia.org/wiki/C%2B%2B
