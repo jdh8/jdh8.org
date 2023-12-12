@@ -1,7 +1,14 @@
-- title: 中文
-  href: https://jdh8.com/
-- title: About
-  href: /about/
+- title: Links
+  href: '#'
+  children:
+    - title: Natsuki
+      href: https://discord.gg/gvXAy63dNR
+    - title: Bridge systems
+      href: https://jdh8.github.io/bridge-systems/
+    - title: Wbridge5
+      href: https://jdh8.gitbooks.io/wbridge5/content/
+    - title: 中文
+      href: https://jdh8.com/
 - title: Tools
   href: /tools/
   children:
@@ -11,14 +18,3 @@
       href: /tools/prime/
     - title: Whiteboard
       href: /tools/whiteboard/
-- title: Wbridge5
-  href: /wbridge5/
-  children:
-    - title: General understandings
-      href: /wbridge5/general/
-    - title: Partnership bidding
-      href: /wbridge5/partnership/
-    - title: Competitive bidding
-      href: /wbridge5/compentitive/
-    - title: Defensive bidding
-      href: /wbridge5/defensive/
