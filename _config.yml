@@ -2,7 +2,7 @@ plugins:
   - jekyll-paginate
 
 title: Taipei Forcing Club
-description: Science and games with Chen-Pang He, mainly computer science and contract bridge
+description: Computer science and contract bridge
 paginate: 10
 paginate_path: /page/:num/
 permalink: /:title/
