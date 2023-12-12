@@ -1,7 +1,7 @@
 @font-face {
 	font-family: Genericons;
 	font-display: block;
-	src: url(https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/Genericons.woff);
+	src: url(Genericons.woff);
 }
 
 nav a:not(:only-child)::after {
