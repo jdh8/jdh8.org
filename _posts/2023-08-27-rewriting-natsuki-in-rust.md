@@ -4,8 +4,8 @@ title: Rewriting Natsuki in Rust
 category: Rust
 tags: Discord DDLC
 ---
-I'm rewriting Natsuki (3.0) in Rust for several reasons. You can track my
-progress at [this branch][branch].
+I'm rewriting [Natsuki][natsuki] (3.0) in [Rust][rust] for several reasons. You
+can track my progress at [this branch][branch].
 
 1. **Hosting**: Free hosting tend to assume that node.js projects are websites.
    They put the app to sleep when *idle*, which effectively takes down a
@@ -19,4 +19,6 @@ progress at [this branch][branch].
    her further.
 
 [branch]: https://github.com/jdh8/natsuki/tree/rewrite-in-rust
+[natsuki]: https://github.com/jdh8/natsuki
+[rust]: https://www.rust-lang.org/
 [shuttle]: https://www.shuttle.rs/pricing
