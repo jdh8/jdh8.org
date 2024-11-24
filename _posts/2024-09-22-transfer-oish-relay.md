@@ -46,9 +46,6 @@ Whether 2NT is game-forcing is up to partnership agreement.
 
 ### Polish Club with swapped minor suits
 
-[Litten Polish Club](https://jdh8.github.io/bridge-systems/wj.htm) follows
-this philosophy.
-
 1♣
 : Polish Club with diamonds instead of clubs:
 1. Balanced 12--14 HCP
@@ -67,8 +64,7 @@ twice.  The *odwrotka* sequence of 1♣-1X-2♦ remains a power reverse.
 
 Responding to TOR + 1 is more complicated than TOR.  You can no longer park at
 the negative relay (TOR + 1). Accepting the transfer (TOR + 5) becomes default
-and often meets a pass.  Take 1♦ (showing clubs) in Litten Polish Club for
-example:
+and often meets a pass.  Take 1♦ (showing clubs) for example:
 
 - Pass: weak long diamonds
 - 1NT: constructive natural, effectively 4+ diamonds
