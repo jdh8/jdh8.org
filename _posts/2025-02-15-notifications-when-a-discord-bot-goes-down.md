@@ -23,7 +23,7 @@ There are practical reasons to do this.
 Below is [how I pair Natsuki with an Axum server][pairing].  The [Axum][axum]
 server only serves [204 No Content][204] at root.
 
-```rust
+```rs
 #[shuttle_runtime::async_trait]
 impl Service for Natsuki {
     async fn bind(mut self, addr: std::net::SocketAddr) -> Result<(), Error> {
@@ -59,3 +59,26 @@ contains sensitive data.  If the webhook is leaked, other people can send
 arbitrary messages to the channel.
 
 [watchdog]: https://github.com/jdh8/watchdog
+
+```rs
+use dotenv::var;
+use serde_json::json;
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let client = reqwest::Client::new();
+    let ping = || async {
+        const ENDPOINT: &str = "https://natsuki-oehk.shuttle.app/";
+        anyhow::ensure!(client.head(ENDPOINT).send().await?.status().is_success());
+        Ok(())
+    };
+    if let Err(error) = ping().await {
+        client
+            .post(var("WEBHOOK")?)
+            .json(&json!({ "content": error.to_string() }))
+            .send()
+            .await?;
+    }
+    Ok(())
+}
+```
