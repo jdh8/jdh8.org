@@ -47,4 +47,15 @@ impl Service for Natsuki {
 
 ## Monitor the web server
 
-[To be continued...]
+The other part of the plan is a watchdog that periodically pings the web server.
+The watchdog informs me through a Discord channel whenever a ping fails.  Since
+the web server is available worldwide, the watchdog can live anywhere such as
+GitHub Actions.  Given the importance of GitHub, it is much more reliable than
+self-hosting.
+
+[My watchdog][watchdog] is open-source like Natsuki.  It takes a Discord webhook
+to send messages.  I make it an environment variable because the webhook
+contains sensitive data.  If the webhook is leaked, other people can send
+arbitrary messages to the channel.
+
+[watchdog]: https://github.com/jdh8/watchdog
