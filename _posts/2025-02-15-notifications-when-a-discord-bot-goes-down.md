@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Notifications when a Discord bot goes down
+category: Network
 tags: Discord
 ---
 I want [Natsuki][natsuki] to notify me when she goes down.  This task is harder
