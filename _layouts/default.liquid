@@ -10,6 +10,8 @@
 		<title>{{ site.title }} – {{ site.description | strip_html }}</title>
 	{% elsif structure[0] == "page" %}
 		<title>{{ site.title }} – Page {{ structure[1] }} – {{ site.description | strip_html }}</title>
+	{% elsif page.type == "year" %}
+		<title>{{ page.date | date: "%Y" }} – {{ site.title }}</title>
 	{% else %}
 		<title>{{ page.title }} – {{ site.title }}</title>
 	{% endif %}
@@ -43,6 +45,15 @@
 	<main>{{ content | replace: '♥', '<span class="redsuit">♥</span>' | replace: '♦', '<span class="redsuit">♦</span>' }}</main>
 	<aside>
 		<section>{% include search.liquid %}</section>
+		<section>
+			<h2>Archives</h2>
+			<ul>
+				{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+				{% for year in years %}
+					<li><a href="{{ site.baseurl }}/{{ year.name }}/">{{ year.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</section>
 		<section>
 			<h2>Categories</h2>
 			<ul>

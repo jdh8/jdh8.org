@@ -5,8 +5,9 @@ plugins:
   - jekyll-archives
 
 jekyll-archives:
-  enabled: [tags, categories]
+  enabled: [year, tags, categories]
   layouts:
+    year: year
     tag: tag
     category: category
 
