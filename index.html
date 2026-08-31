@@ -7,8 +7,9 @@ layout: default
 	<header><h1 class="title">Nothing Found</h1></header>
 	<p>
 		It seems we can’t find what you’re looking for.
-		{% comment %} Perhaps searching can help. {% endcomment %}
+		Perhaps searching can help.
 	</p>
+	{% include search.liquid %}
 {% endunless %}
 
 {% if paginator.total_pages > 1 %}

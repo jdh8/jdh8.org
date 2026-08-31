@@ -1,0 +1,20 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+<header><h1 class="title">Search Results for: <span></span></h1></header>
+<noscript><p>Please enable JavaScript to search this site.</p></noscript>
+<template id="none">
+	<header><h1 class="title">Nothing Found</h1></header>
+	<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+	{% include search.liquid %}
+</template>
+<template id="loader">
+	<button type="button" id="load">Older posts</button>
+</template>
+{% assign pages = site.posts.size | plus: site.paginate | minus: 1 | divided_by: site.paginate %}
+<script type="module">
+	import search from "{{ site.baseurl }}/search.js";
+	search({{ pages }}, {{ site.paginate }});
+</script>

@@ -6,3 +6,12 @@ layout: default
 	{{ site.data.categories[page.title] | markdownify }}
 </header>
 {% include series.liquid posts=page.posts %}
+{% if page.posts.size > site.paginate %}
+	<template id="loader">
+		<button type="button" id="load">Older posts</button>
+	</template>
+	<script type="module">
+		import reveal from "{{ site.baseurl }}/reveal.js";
+		reveal([...document.querySelectorAll("article.post")], {{ site.paginate }});
+	</script>
+{% endif %}

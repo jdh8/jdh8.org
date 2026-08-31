@@ -4,7 +4,8 @@
 	src: url(Genericons.woff);
 }
 
-nav a:not(:only-child)::after {
+nav a:not(:only-child)::after,
+.search-submit::before {
 	display: inline-block;
 	font-family: Genericons;
 	font-size: 1rem;
