@@ -2,6 +2,13 @@ timezone: Asia/Taipei
 
 plugins:
   - jekyll-paginate
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: [tags, categories]
+  layouts:
+    tag: tag
+    category: category
 
 title: Taipei Forcing Club
 description: Computer science and contract bridge

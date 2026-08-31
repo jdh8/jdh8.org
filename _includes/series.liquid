@@ -1,4 +1,4 @@
-{% for post in include.posts limit: site.paginate %}
+{% for post in include.posts %}
 	<article class="post {{ post.class }}">
 		<header><h2><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a></h2></header>
 		<div class="content">
