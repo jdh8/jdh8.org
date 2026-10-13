@@ -48,7 +48,7 @@
 		<label class="toggle" for="ballot">Menu</label>
 		{% include navigation.liquid %}
 	</header>
-	<main>{{ content | replace: '♥', '<span class="redsuit">♥</span>' | replace: '♦', '<span class="redsuit">♦</span>' }}</main>
+	<main>{{ content | replace: '\♥', '&hearts;' | replace: '\♦', '&diams;' | replace: '♥', '<span class="redsuit">♥</span>' | replace: '♦', '<span class="redsuit">♦</span>' }}</main>
 	<aside>
 		<section>{% include search.liquid %}</section>
 		<section>
