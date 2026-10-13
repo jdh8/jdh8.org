@@ -86,7 +86,6 @@ td {
 }
 
 ::placeholder {
-	@extend .sans;
 	color: #686868;
 	opacity: 1;
 }

@@ -16,8 +16,11 @@ video {
 	margin-bottom: 1.75em;
 	max-width: 100%;
 	vertical-align: middle;
+}
 
-	p > & {
-		margin-bottom: 0;
-	}
+p > embed,
+p > iframe,
+p > object,
+p > video {
+	margin-bottom: 0;
 }

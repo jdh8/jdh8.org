@@ -1,31 +1,12 @@
 body {
 	margin: 0 auto;
-	max-width: 1.1 * 75em;
+	max-width: 82.5em;
 	word-wrap: break-word;
 }
 
-%title {
-	@extend .sans;
+header :is(h1, h2, h3, h4, h5, h6),
+main > h1 {
 	font-weight: 700;
-}
-
-%heading {
-	color: #1a1a1a;
-	font-weight: 900;
-	margin-bottom: 1.75rem;
-}
-
-.content * + %heading,
-.content * + * %heading {
-	margin-top: 3.5rem;
-}
-
-.content > footer h2 {
-	margin-top: 0;
-}
-
-header %heading {
-	@extend %title;
 }
 
 h1,
@@ -34,7 +15,18 @@ h3,
 h4,
 h5,
 h6 {
-	@extend %heading;
+	color: #1a1a1a;
+	font-weight: 900;
+	margin-bottom: 1.75rem;
+}
+
+.content * + :is(h1, h2, h3, h4, h5, h6),
+.content * + * :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 3.5rem;
+}
+
+.content > footer h2 {
+	margin-top: 0;
 }
 
 article > header > *,
@@ -68,7 +60,7 @@ h6 {
 }
 
 h4 {
-	letter-spacing: 0.140625em; // 2.25px
+	letter-spacing: 0.140625em; /* 2.25px */
 	text-transform: uppercase;
 }
 
@@ -153,7 +145,6 @@ main > header {
 }
 
 main > h1 {
-	@extend %title;
 	margin-bottom: 3.5rem;
 }
 
@@ -183,7 +174,6 @@ body > footer {
 }
 
 article > footer {
-	@extend .sans;
 	padding-left: 0;
 	padding-right: 0;
 	display: flex;
@@ -214,10 +204,10 @@ article > footer > * + div:not(:empty)::before {
 
 .content > footer > section {
 	overflow: hidden;
+}
 
-	> :last-child {
-		margin-bottom: 0;
-	}
+.content > footer > section > :last-child {
+	margin-bottom: 0;
 }
 
 .content > footer h2 {
